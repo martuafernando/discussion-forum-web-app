@@ -1,6 +1,5 @@
 import './App.css'
-import Header from '@components/Header/Header'
-import LoginPage from '@pages/LoginPage/LoginPage'
+import LoginPage from '@pages/login-page/LoginPage'
 import { RouterProvider } from 'react-router-dom'
 import { router } from '@utils/router'
 

@@ -1,10 +1,8 @@
 import React from "react";
-import PropTypes from 'prop-types'
-import LoadingBar from 'react-redux-loading-bar'
 import './Header.css'
 
 import logo from '@assets/logo.svg'
-import Navigation from "@components/Navigation/Navigation";
+import Navigation from "@components/navigation/Navigation";
 export default function Header() {
   return (
     <header>

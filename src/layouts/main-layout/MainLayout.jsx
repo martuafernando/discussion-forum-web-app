@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollRestoration, Outlet } from "react-router-dom";
-import Header from "../../components/Header/header";
+import Header from "@components/header/Header";
 import './MainLayout.css'
 
 export default function MainLayout() {
