@@ -9,15 +9,16 @@ import {
   FaSun,
   FaMoon,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
-export default function Header({
-  avatarUrl,
-}) {
+export default function Header() {
+  const user = useSelector(store => store.user)
+  console.log('testing::', user)
   return (
     <header>
       <div className="header__container">
         <img src={logo} alt="Logo" title="logo"/>
-        { avatarUrl
+        { user.avatarUrl
         ? <>
           <Navigation></Navigation>
           <img
@@ -25,8 +26,10 @@ export default function Header({
             src='https://ui-avatars.com/api/?name=testing&background=random' alt="Logo" title="logo"/>
           </>
         : <div className="header__tool">
-            <Link className="">Sign In</Link>
-            <Link className="button button-outlined">Sign Up</Link>
+            <Link to='/auth/login'>Sign In</Link>
+            <Link
+              to='/auth/register'
+              className="button button-outlined">Sign Up</Link>
             <img
               className="header__language-toggle"
               src='/img/indonesia-flag.png' width='24' height='24' alt="Bahasa Indonesia" title="Bahasa Indonesia"/>
@@ -38,8 +41,4 @@ export default function Header({
       </div>
     </header>
   )
-}
-
-Header.propTypes = {
-  avatarUrl: PropTypes.string
 }

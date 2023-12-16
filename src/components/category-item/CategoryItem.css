@@ -1,5 +1,4 @@
 .category-item {
-  font-size: var(--font-size-6);
-  background: none;
-  color: black;
+  font-size: var(--font-size-body);
+  color: var(--white-1);
 }

@@ -1,0 +1,22 @@
+.leaderboard-overview-item,
+.leaderboard-overview-item > div {
+  display: flex;
+  align-items: center;
+}
+
+.leaderboard-overview-item {
+  justify-content: space-between;
+}
+
+.leaderboard-overview-item > div {
+  gap: 8px;
+}
+
+.leaderboard-overview-item__avatar {
+  width: 48px;
+  border-radius: 50%;
+}
+
+.leaderboard-overview-item__score {
+  background-color: var(--green);
+}

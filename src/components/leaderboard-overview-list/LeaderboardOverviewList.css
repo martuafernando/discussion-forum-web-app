@@ -1,0 +1,15 @@
+.leaderboard-overview-list {
+  padding: 24px;
+  background-color: var(--background-2);
+  border-radius: 12px;
+}
+
+.leaderboard-overview-list__title {
+  margin-bottom: 24px;
+}
+
+.leaderboard-overview-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

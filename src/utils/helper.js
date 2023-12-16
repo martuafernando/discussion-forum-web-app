@@ -32,3 +32,13 @@ export function calculateDifferenceDate(dateString) {
     }
   }
 }
+
+export function stringToColor(string) {
+  let hash = 0;
+  for (let i = 0; i < string.length; i++) {
+    hash = string.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  const hexColor = (hash | 0x000000).toString(16);
+  return "#" + "000000".substring(0, 6 - hexColor.length) + hexColor;
+}

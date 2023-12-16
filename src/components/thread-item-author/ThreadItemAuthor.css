@@ -1,8 +1,7 @@
 .thread-item-author {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   align-items: center;
-  margin: 12px 0px 24px;
 }
 
 .thread-item-author__avatar {
@@ -14,8 +13,10 @@
   font-weight: 600;
 }
 
-.thread-item-author__time {
-  margin-top: -4px;
+.thread-item-author__information {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .thread-item-author__information {

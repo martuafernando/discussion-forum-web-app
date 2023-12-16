@@ -1,0 +1,7 @@
+.thread-create-new{
+  display: flex;
+  gap: 24px;
+  border-radius: 12px;
+  background-color: var(--background-2);
+  padding: 16px 24px;
+}

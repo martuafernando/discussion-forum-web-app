@@ -37,6 +37,8 @@
   --gray-700: #495057;
   --gray-800: #343a40;
   --gray-900: #212529;
+  --background-1: #DEE4E6;
+  --background-2: #FBFEFF;
   --primary: var(--blue);
   --secondary: #6c757d;
   --success: #00C6AB;

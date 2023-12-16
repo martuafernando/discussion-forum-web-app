@@ -5,12 +5,12 @@ import { asyncLoginUser } from "../../redux/states/user/action";
 import { useNavigate, Link } from "react-router-dom";
 import Flash from "@components/flash/Flash";
 import SpinningCircle from "../../components/spinning-circle/SpinningCircle";
+import { useEffect } from "react";
 
 export default function LoginPage() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const loading = useSelector(store => store.loadingBar)
-  
 
   function onLoginHandler(event) {
     event.preventDefault()
@@ -19,8 +19,9 @@ export default function LoginPage() {
     const formData = new FormData(form)
     const { email, password } = Object.fromEntries(formData.entries())
     dispatch(asyncLoginUser(email, password))
-    // navigate('/')
+      .then(() => navigate('/'))
   }
+
   return (
       <main className="login-page">
         <h2>Login</h2>

@@ -1,4 +1,5 @@
 .login-page{
+  background-color: var(--background-2);
   max-width: 376px;
   padding: 48px 16px;
   box-shadow: var(--box-shadow);

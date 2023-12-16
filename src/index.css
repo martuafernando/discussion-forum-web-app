@@ -27,7 +27,7 @@ body {
   place-items: center;
   min-width: 320px;
   font-size: var(--body-font-size);
-  background-color: var(--body-bg);
+  background-color: var(--background-1);
   color: var(--dark-text-emphasis);
 }
 
@@ -94,10 +94,6 @@ input:-internal-autofill-selected {
   color: var(--light);
   width: fit-content;
   font-weight: normal;
-}
-
-main {
-  margin-top: 144px!important;
 }
 
 .button-outlined {
