@@ -1,0 +1,9 @@
+.thread-list__title {
+  margin-bottom: 36px;
+}
+
+.thread-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}

@@ -1,0 +1,25 @@
+.thread-item {
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  position: relative;
+  max-width: 768px;
+  z-index: -10;
+} 
+
+.thread-item__title {
+  font-weight: 600;
+}
+
+.thread-item__content {
+  margin: 24px 0 36px;
+}
+
+@media (min-width: 576px) { }
+@media (min-width: 768px) {
+  .thread-item {
+    padding: 48px;
+  }
+}
+@media (min-width: 992px) { }
+@media (min-width: 1200px) { }
+@media (min-width: 1400px) { }

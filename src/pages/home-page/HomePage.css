@@ -1,0 +1,13 @@
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 128px;
+}
+
+.home-page__main {
+  flex: 3;
+}
+
+.home-page__sidebar {
+  flex: 1;
+}

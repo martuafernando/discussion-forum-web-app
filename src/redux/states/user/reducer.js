@@ -15,7 +15,7 @@ export default function userReducer(state = initialState, action) {
     case REMOVE_USER: 
       return {
         ...state,
-        user: undefined
+        user: {}
       }
     default:
       return state

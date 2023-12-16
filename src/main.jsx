@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './color.css'
+import './template.css'
 import './index.css'
 import App from './App.jsx'
 import store from './redux/store.js'

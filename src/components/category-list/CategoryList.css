@@ -1,0 +1,9 @@
+.category-list__title {
+  margin-bottom: 36px;
+}
+
+.category-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

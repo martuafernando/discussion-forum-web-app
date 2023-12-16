@@ -7,9 +7,7 @@ export default function MainLayout() {
   return (
     <>
       <Header></Header>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
       <footer>©️ Fernando Sibarani 2023</footer>
       <ScrollRestoration />
     </>

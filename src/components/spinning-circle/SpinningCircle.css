@@ -1,0 +1,28 @@
+.spinning-circle {
+  position: relative;
+  width: var(--font-size-body);
+  height: var(--font-size-body);
+  margin: auto;
+  transform: translate(-25%, -25%);
+}
+
+.spinning-circle__circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: solid 4px  var(--primary);
+  border-left-color:  var(--white-1);
+  border-radius: 50%;
+  animation: spin 1.3s steps(2) .2s infinite;
+  -webkit-animation: spin 1.3s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,6 +1,7 @@
 import agent from "../../../utils/agent"
 import { hideLoading, showLoading } from 'react-redux-loading-bar'
 import { SET_USER } from "../../actionTypes";
+import { setError } from "../error/action";
 
 export function asyncLoginUser(email, password) {
   return async (dispatch) => {
@@ -15,7 +16,11 @@ export function asyncLoginUser(email, password) {
       });
       return dispatch(hideLoading());
     } catch (error) {
-      alert(error.message);
+      dispatch(setError({
+        type: 'error',
+        message: error.message
+      }))
+      return dispatch(hideLoading());
     }
   };
 }
@@ -34,8 +39,11 @@ export function asyncRegisterUser({
         password
       });
     } catch (error) {
-      alert(error.message);
+      dispatch(setError({
+        type: 'error',
+        message: error.message
+      }))
+      return dispatch(hideLoading());
     }
-    dispatch(hideLoading());
   };
 }
