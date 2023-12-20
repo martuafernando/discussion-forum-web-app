@@ -36,7 +36,7 @@ export default function LoginPage() {
               type="submit"
               disabled={ loading.default }
               >{ loading.default ? <SpinningCircle /> : 'Sign In' }
-              </button>
+            </button>
           </div>
         </form>
       </main>

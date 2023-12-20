@@ -4,10 +4,11 @@ import PropTypes from "prop-types"
 
 export default function ThreadCreateNew({
   className,
-  avatarUrl
+  avatarUrl,
+  onClick,
 }) {
   return (
-    <div className={ `thread-create-new ${className}` }>
+    <div className={ `thread-create-new ${className}` } onClick={onClick}>
       <img
         className="thread-item-author__avatar"
         src={ avatarUrl }
@@ -23,5 +24,6 @@ export default function ThreadCreateNew({
 
 ThreadCreateNew.propTypes = {
   className: PropTypes.string,
-  avatarUrl: PropTypes.string.isRequired
+  avatarUrl: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 }

@@ -68,17 +68,21 @@ h6, .h6{
   font-size: var(--font-size-small);
 }
 
-input {
+input,
+textarea,
+.textarea {
   display: block;
   padding: 12px 24px;
   border-radius: 12px;
   font-size: inherit;
+  font-family: inherit;
   background-color: var(--white-1);
   border: var(--border-style) var(--border-width) var(--white-2);
   color: var(--black-2);
   box-sizing: border-box;
 }
 
+.textarea:focus,
 input:focus {
   outline: var(--focus-ring-width) var(--border-style) var(--focus-ring-color);
 }

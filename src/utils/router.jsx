@@ -5,6 +5,7 @@ import NotFoundPage from "@pages/not-found-page/NotFoundPage";
 import RegisterPage from '@pages/register-page/RegisterPage';
 import HomePage from "@pages/home-page/HomePage";
 import { useSelector } from "react-redux";
+import CreateThread from "../pages/create-thread/CreateThread";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,9 @@ export const router = createBrowserRouter(
       <Route element={<RequireAuth />} errorElement={<NotFoundPage />}>
         <Route element={<MainLayout />}>
           <Route index element={<HomePage />} />
+          <Route element={<HomePage />}>
+            <Route path='create-thread' element={<CreateThread />} />
+          </Route>
           <Route path='leaderboards' element={<HomePage />} />
           <Route path='profile' element={<HomePage />} />
         </Route>

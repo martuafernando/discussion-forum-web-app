@@ -59,6 +59,19 @@ const Auth = {
     await request.post('/login', { email, password }),
 };
 
+const Thread = {
+  createThread: async ({ title, category, body }) =>
+    await request.post('/threads', { title, category, body }),
+  getThread: async () =>
+    await request.get('/threads'),
+  upVoteThread: async (threadId) =>
+    await request.post(`/threads/${threadId}/up-vote`),
+  downVoteThread: async (threadId) =>
+    await request.post(`/threads/${threadId}/down-vote`),
+  neutralVoteThread: async (threadId) =>
+    await request.post(`/threads/${threadId}/neutral-vote`),
+};
+
 const User = {
   getProfile: async () =>
     await request.get('/users/me'),
@@ -67,6 +80,7 @@ const User = {
 export default{
   Auth,
   User,
+  Thread,
   setToken: _token => request.setToken(_token)
 }
 

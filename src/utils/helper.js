@@ -27,7 +27,7 @@ export function calculateDifferenceDate(dateString) {
       return `${hour} ${hour>1 ? 'hours' : 'an hour'} ago`
     }
     case difference > 60: {
-      const minute = Math.floor(difference/3600)
+      const minute = Math.floor(difference/60)
       return `${minute} ${minute>1 ? 'minutes' : 'a minute'} ago`
     }
   }

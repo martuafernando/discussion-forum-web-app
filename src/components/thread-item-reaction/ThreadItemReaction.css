@@ -11,6 +11,7 @@
   gap: 4px;
 }
 
+
 .thread-item-reaction__vote button {
   width: 24px;
   height: 24px;
@@ -21,4 +22,5 @@
   border-radius: 50%;
   font-size: 24px;
   box-shadow: none;
+  cursor: pointer;
 }

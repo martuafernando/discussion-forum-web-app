@@ -1,14 +1,17 @@
-.modal-layout__container{
-  position: absolute;
+.modal-layout__container {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(41, 48, 52, 0.1);
+  backdrop-filter: blur(4px);
 }
+
 
 .modal-layout {
   position: relative;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

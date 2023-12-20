@@ -15,5 +15,3 @@ export function setError({
     });
   }
 }
-
-export const unsetError = dispatch => dispatch({ type: UNSET_ERROR })

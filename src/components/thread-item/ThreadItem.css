@@ -3,7 +3,6 @@
   border-radius: 12px;
   padding: 16px;
   position: relative;
-  z-index: -10;
 } 
 
 .thread-item__title {
@@ -12,6 +11,7 @@
 
 .thread-item__content {
   margin: 24px 0 36px;
+  font: inherit;
 }
 
 .thread-item__author-reaction {

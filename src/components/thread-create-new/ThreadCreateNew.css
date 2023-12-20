@@ -4,4 +4,10 @@
   border-radius: 12px;
   background-color: var(--background-2);
   padding: 16px 24px;
+  cursor: pointer;
 }
+
+.thread-create-new > * {
+  cursor: pointer;
+}
+

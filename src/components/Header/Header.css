@@ -5,6 +5,7 @@ header {
   left: 0;
   right: 0;
   box-shadow: var(--box-shadow-sm);
+  z-index: 999;
 }
 
 .header__container {
