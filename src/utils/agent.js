@@ -79,10 +79,16 @@ const User = {
     await request.get('/users'),
 }
 
+const Leaderboard = {
+  getLeaderboard: async () =>
+    await request.get('/leaderboards'),
+}
+
 export default{
   Auth,
   User,
   Thread,
+  Leaderboard,
   setToken: _token => request.setToken(_token)
 }
 

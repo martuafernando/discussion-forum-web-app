@@ -7,15 +7,18 @@ import LeaderboardOverviewList from "@components/leaderboard-overview-list/Leade
 import { useNavigate, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { asyncGetThread } from "../../redux/states/thread/action";
+import { asyncGetLeaderboard } from "../../redux/states/leaderboard/action";
 
 export default function HomePage() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const threads = useSelector(store => store.threads)
+  const leaderboard = useSelector(store => store.leaderboard)
   const categories = threads ? Array.from(new Set(threads.map(thread => thread.category))) : [];
 
   useEffect(() => {
     dispatch(asyncGetThread())
+    dispatch(asyncGetLeaderboard())
   }, [dispatch])
 
   function onCreateThreadClickedHandler() {
@@ -35,7 +38,7 @@ export default function HomePage() {
         </main>
         <aside className="home-page__sidebar">
           <CategoryList categories={ categories } />
-          <LeaderboardOverviewList />
+          <LeaderboardOverviewList leaderboard={ leaderboard.slice(0, 5) } />
         </aside>
       </div>
       <Outlet />

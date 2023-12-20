@@ -19,8 +19,6 @@
   margin: 64px 0;
 }
 
-@media (min-width: 576px) { }
-@media (min-width: 768px) { }
 @media (min-width: 992px) {
   .home-page {
     grid-template-columns: 9fr 3fr;
@@ -28,5 +26,3 @@
     padding: 0 48px;
   }
 }
-@media (min-width: 1200px) { }
-@media (min-width: 1400px) { }

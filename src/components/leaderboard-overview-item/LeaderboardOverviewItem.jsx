@@ -24,8 +24,8 @@ export default function LeaderboardOverviewItem({
 }
 
 LeaderboardOverviewItem.propTypes = {
-  rank: PropTypes.string.isRequired,
+  rank: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
-  score: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
 }
