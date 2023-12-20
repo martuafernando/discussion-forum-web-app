@@ -11,4 +11,5 @@
 .category-list__content {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }

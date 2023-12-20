@@ -12,7 +12,7 @@ export default function HomePage() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const threads = useSelector(store => store.threads)
-  const categories = threads ? threads.map(thread => thread.category) : []
+  const categories = threads ? Array.from(new Set(threads.map(thread => thread.category))) : [];
 
   useEffect(() => {
     dispatch(asyncGetThread())

@@ -11,7 +11,7 @@ const initialState = []
 
 export default function threadReducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_THREAD:  return [ ...state, action.payload ]
+    case ADD_THREAD:  return [ action.payload, ...state ]
     case SET_THREAD: return action.payload
     case INCREASE_THREAD_LIKES: {
       const threadIndex = state.findIndex((it) => it.id === action.payload.threadId)

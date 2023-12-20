@@ -22,7 +22,7 @@ export default function ThreadList({
                 upVotes={ thread.upVotesBy }
                 downVotes={ thread.downVotesBy }
                 totalComments={ thread.totalComments }
-                ownerId={ thread.ownerId }
+                owner={ thread.owner }
               />
             )
           })

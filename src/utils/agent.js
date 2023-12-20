@@ -75,6 +75,8 @@ const Thread = {
 const User = {
   getProfile: async () =>
     await request.get('/users/me'),
+  getUsers: async () =>
+    await request.get('/users'),
 }
 
 export default{

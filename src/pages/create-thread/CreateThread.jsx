@@ -13,6 +13,7 @@ export default function CreateThread() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const loading = useSelector(store => store.loadingBar)
+  const user = useSelector(store => store.user)
   const [body, onBodyChanged] = useInput('')
 
   function onCloseHandler(){
@@ -26,7 +27,7 @@ export default function CreateThread() {
     const formData = new FormData(form)
     const { title, category } = Object.fromEntries(formData.entries())
 
-    dispatch(asyncCreateThread({ title, category, body }))
+    dispatch(asyncCreateThread({ title, category, body, user, onSuccessCallback: onCloseHandler }))
   }
 
   return (

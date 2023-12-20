@@ -9,19 +9,19 @@ import {
   SET_THREAD
 } from "../../actionTypes";
 
-export function asyncCreateThread({ title, category, body }) {
+export function asyncCreateThread({ title, category, body, user, onSuccessCallback }) {
   return async (dispatch) => {
     try {
       dispatch(showLoading());
-      await agent.Thread.createThread({ title, category, body });
+      const response = await agent.Thread.createThread({ title, category, body });
       dispatch({
         type: ADD_THREAD,
         payload: {
-          title,
-          category,
-          body
+          ...response.data.thread,
+          owner: user
         }
       });
+      onSuccessCallback()
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(setError({
@@ -37,10 +37,19 @@ export function asyncGetThread() {
   return async (dispatch) => {
     try {
       dispatch(showLoading());
-      const response = await agent.Thread.getThread();
+      const [ threadResponse, userResponse ] = await Promise.all([
+        agent.Thread.getThread(),
+        agent.User.getUsers(),
+      ]);
+      const threads = threadResponse.data.threads.map((thread) => {
+        return {
+          ...thread,
+          owner: userResponse.data.users.find((user) => user.id === thread.ownerId)
+        }
+      })
       dispatch({
         type: SET_THREAD,
-        payload: response.data.threads
+        payload: threads
       });
       return dispatch(hideLoading());
     } catch (error) {

@@ -11,7 +11,7 @@ export default function ThreadItem({
   content,
   category,
   createdAt,
-  ownerId,
+  owner,
   upVotes,
   downVotes,
   totalComments,
@@ -25,8 +25,8 @@ export default function ThreadItem({
       <div className="thread-item__content">{ content && parser(content) }</div>
       <div className="thread-item__author-reaction">
         <ThreadItemAuthor
-          name='Testing dulu ya gak sih'
-          avatarUrl='https://ui-avatars.com/api/?name=testing&background=random'
+          name={ owner.name }
+          avatarUrl={ owner.avatar }
           createdAt={ createdAt }
         />
         <ThreadItemReaction 
@@ -46,7 +46,7 @@ ThreadItem.propTypes = {
   content: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
-  ownerId: PropTypes.string.isRequired,
+  owner: PropTypes.object.isRequired,
   upVotes: PropTypes.arrayOf(string).isRequired,
   downVotes: PropTypes.arrayOf(string).isRequired,
   totalComments: PropTypes.number.isRequired,
