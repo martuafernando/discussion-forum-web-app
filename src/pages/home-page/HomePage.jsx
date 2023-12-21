@@ -6,8 +6,9 @@ import './HomePage.css'
 import LeaderboardOverviewList from "@components/leaderboard-overview-list/LeaderboardOverviewList";
 import { useNavigate, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { asyncGetThread } from "../../redux/states/thread/action";
+import { asyncGetThread } from "../../redux/states/threads/action";
 import { asyncGetLeaderboard } from "../../redux/states/leaderboard/action";
+import { ScrollRestoration } from "react-router-dom";
 
 export default function HomePage() {
   const navigate = useNavigate()
@@ -22,7 +23,7 @@ export default function HomePage() {
   }, [dispatch])
 
   function onCreateThreadClickedHandler() {
-    navigate('/create-thread')
+    navigate('/thread/create')
   }
 
   return (
@@ -42,6 +43,7 @@ export default function HomePage() {
         </aside>
       </div>
       <Outlet />
+      <ScrollRestoration/>
     </>
   )
 } 

@@ -6,7 +6,7 @@ import { FaXmark } from "react-icons/fa6";
 import { useSelector, useDispatch } from "react-redux";
 import Flash from "@components/flash/Flash";
 import { useNavigate } from "react-router-dom";
-import { asyncCreateThread } from "../../redux/states/thread/action";
+import { asyncCreateThread } from "../../redux/states/threads/action";
 import useInput from "../../hooks/useInput";
 
 export default function CreateThread() {

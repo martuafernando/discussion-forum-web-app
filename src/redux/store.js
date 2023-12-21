@@ -3,8 +3,9 @@ import { thunk } from "redux-thunk"
 import userReducer from "./states/user/reducer"
 import { loadingBarReducer } from 'react-redux-loading-bar'
 import errorReducer from './states/error/reducer'
-import threadReducer from './states/thread/reducer'
+import threadReducer from './states/threads/reducer'
 import leaderboardReducer from './states/leaderboard/reducer'
+import detailThreadReducer from './states/thread/reducer'
 
 export default configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export default configureStore({
     loadingBar: loadingBarReducer,
     error: errorReducer,
     threads: threadReducer,
+    thread: detailThreadReducer,
     leaderboard: leaderboardReducer
   },
   middleware: [ thunk ]

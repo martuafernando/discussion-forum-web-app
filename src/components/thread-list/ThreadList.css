@@ -3,3 +3,12 @@
   flex-direction: column;
   gap: 24px;
 }
+.thread-list > .thread-item {
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .thread-list > .thread-item {
+    padding: 48px;
+  }
+}

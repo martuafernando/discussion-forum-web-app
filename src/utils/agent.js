@@ -62,8 +62,12 @@ const Auth = {
 const Thread = {
   createThread: async ({ title, category, body }) =>
     await request.post('/threads', { title, category, body }),
-  getThread: async () =>
+  getThreads: async () =>
     await request.get('/threads'),
+  getDetailThread: async (threadId) =>
+    await request.get(`/threads/${threadId}`),
+  commentThread: async (threadId, content) =>
+    await request.post(`/threads/${threadId}/comments`, { content }),
   upVoteThread: async (threadId) =>
     await request.post(`/threads/${threadId}/up-vote`),
   downVoteThread: async (threadId) =>
