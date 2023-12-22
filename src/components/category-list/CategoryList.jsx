@@ -1,4 +1,4 @@
-import React from "react";
+
 import CategoryItem from "../category-item/CategoryItem";
 import './CategoryList.css'
 import PropTypes from "prop-types"

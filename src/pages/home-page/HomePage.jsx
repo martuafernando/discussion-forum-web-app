@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import ThreadList from "@components/thread-list/ThreadList";
 import CategoryList from "@components/category-list/CategoryList";
 import ThreadCreateNew from "@components/thread-create-new/ThreadCreateNew";

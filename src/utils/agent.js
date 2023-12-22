@@ -88,10 +88,20 @@ const Leaderboard = {
     await request.get('/leaderboards'),
 }
 
+const Comment = {
+  upVoteComment: async (threadId, commentId) =>
+    await request.post(`/threads/${threadId}/comments/${commentId}/up-vote`),
+  downVoteComment: async (threadId, commentId) =>
+    await request.post(`/threads/${threadId}/comments/${commentId}/down-vote`),
+  neutralVoteComment: async (threadId, commentId) =>
+    await request.post(`/threads/${threadId}/comments/${commentId}/neutral-vote`),
+}
+
 export default{
   Auth,
   User,
   Thread,
+  Comment,
   Leaderboard,
   setToken: _token => request.setToken(_token)
 }

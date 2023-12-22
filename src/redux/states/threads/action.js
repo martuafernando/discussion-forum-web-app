@@ -62,7 +62,7 @@ export function asyncGetThread() {
   };
 }
 
-export function upVoteThread(threadId, userId) {
+export function asyncUpVoteThread(threadId, userId) {
   return async (dispatch) => {
     dispatch({
       type: INCREASE_THREAD_LIKES,
@@ -87,7 +87,7 @@ export function upVoteThread(threadId, userId) {
   };
 }
 
-export function downVoteThread(threadId, userId) {
+export function asyncDownVoteThread(threadId, userId) {
   return async (dispatch) => {
     dispatch({
       type: INCREASE_THREAD_DISLIKES,
@@ -112,7 +112,7 @@ export function downVoteThread(threadId, userId) {
   };
 }
 
-export function neutralVoteThread(threadId, userId) {
+export function asyncNeutralVoteThread(threadId, userId) {
   return async (dispatch) => {
     dispatch({
       type: NEUTRAL_THREAD_VOTE,

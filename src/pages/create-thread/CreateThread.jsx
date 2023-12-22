@@ -1,4 +1,4 @@
-import React from "react";
+
 import './CreateThread.css'
 import ModalLayout from "@components/layouts/modal-layout/ModalLayout";
 import SpinningCircle from "@components/spinning-circle/SpinningCircle";

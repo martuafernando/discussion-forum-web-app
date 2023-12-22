@@ -1,25 +1,25 @@
-.thread-item-author {
+.item-author {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-.thread-item-author__avatar {
+.item-author__avatar {
   border-radius: 50%;
   width: 48px;
 }
 
-.thread-item-author__name {
+.item-author__name {
   font-weight: 600;
 }
 
-.thread-item-author__information {
+.item-author__information {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.thread-item-author__information {
+.item-author__information {
   display: flex;
   flex-direction: column;
   gap: 0px;

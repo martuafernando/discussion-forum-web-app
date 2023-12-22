@@ -1,11 +1,16 @@
-import React from "react";
+
+import { useSelector, useDispatch } from "react-redux";
 import ThreadItem from "../thread-item/ThreadItem";
 import './ThreadList.css'
 import PropTypes from "prop-types"
-
+import { asyncDownVoteThread, asyncNeutralVoteThread, asyncUpVoteThread } from "../../redux/states/threads/action";
+import { useNavigate } from "react-router-dom";
 export default function ThreadList({
-  threads
+  threads,
 }) {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const user = useSelector((store) => store.user)
   return (
     <div className="thread-list">
       { threads
@@ -14,15 +19,11 @@ export default function ThreadList({
             return (
               <ThreadItem
                 key={ thread.id }
-                id={ thread.id }
-                title={ thread.title }
-                content={ thread.body }
-                createdAt={ thread.createdAt }
-                category={ thread.category }
-                upVotes={ thread.upVotesBy }
-                downVotes={ thread.downVotesBy }
-                totalComments={ thread.totalComments }
-                owner={ thread.owner }
+                thread={ thread }
+                onUpVote={ () => dispatch(asyncUpVoteThread(thread.id, user.id)) }
+                onDownVote={ () => dispatch(asyncDownVoteThread(thread.id, user.id)) }
+                onCancelVote={ () => dispatch(asyncNeutralVoteThread(thread.id, user.id)) }
+                onComment={ () => navigate(`thread/${thread.id}`) }
               />
             )
           })

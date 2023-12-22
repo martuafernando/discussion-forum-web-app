@@ -1,11 +1,9 @@
-import React from "react";
 import './LoginPage.css'
 import { useDispatch, useSelector } from "react-redux";
 import { asyncLoginUser } from "../../redux/states/user/action";
 import { useNavigate, Link } from "react-router-dom";
 import Flash from "@components/flash/Flash";
 import SpinningCircle from "../../components/spinning-circle/SpinningCircle";
-import { useEffect } from "react";
 
 export default function LoginPage() {
   const dispatch = useDispatch()

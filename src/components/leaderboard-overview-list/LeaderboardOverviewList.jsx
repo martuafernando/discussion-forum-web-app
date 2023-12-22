@@ -1,4 +1,4 @@
-import React from "react";
+
 import './LeaderboardOverviewList.css'
 import LeaderboardOverviewItem from "../leaderboard-overview-item/LeaderboardOverviewItem";
 import PropTypes from "prop-types"

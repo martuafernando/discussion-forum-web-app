@@ -1,7 +1,5 @@
-import React from "react";
-import { ScrollRestoration, Outlet } from "react-router-dom";
-import Header from "@components/header/Header";
 import './ModalLayout.css'
+import PropTypes from 'prop-types'
 
 export default function ModalLayout({
   children
@@ -13,4 +11,8 @@ export default function ModalLayout({
       </div>
     </div>
   );
+}
+
+ModalLayout.propTypes = {
+  children: PropTypes.node.isRequired
 }

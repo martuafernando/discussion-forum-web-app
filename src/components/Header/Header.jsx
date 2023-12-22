@@ -1,14 +1,10 @@
-import React from "react";
+
 import './Header.css'
 
 import logo from '@assets/logo.svg'
 import Navigation from "@components/navigation/Navigation";
-import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
-import {
-  FaSun,
-  FaMoon,
-} from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 export default function Header() {

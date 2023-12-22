@@ -1,4 +1,4 @@
-import React from "react";
+
 import './SpinningCircle.css'
 
 export default function SpinningCircle() {

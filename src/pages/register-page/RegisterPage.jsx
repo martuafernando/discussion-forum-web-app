@@ -1,4 +1,3 @@
-import React from "react";
 import './RegisterPage.css'
 import { useDispatch, useSelector } from "react-redux";
 import { asyncRegisterUser } from "../../redux/states/user/action";

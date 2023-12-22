@@ -1,4 +1,4 @@
-import React from "react";
+
 import './ThreadCreateNew.css'
 import PropTypes from "prop-types"
 
@@ -10,7 +10,7 @@ export default function ThreadCreateNew({
   return (
     <div className={ `thread-create-new ${className}` } onClick={onClick}>
       <img
-        className="thread-item-author__avatar"
+        className="item-author__avatar"
         src={ avatarUrl }
       />
       <input

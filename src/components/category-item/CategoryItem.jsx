@@ -1,4 +1,4 @@
-import React from "react";
+
 import './CategoryItem.css'
 import { Link } from "react-router-dom";
 import { stringToColor } from "../../utils/helper";

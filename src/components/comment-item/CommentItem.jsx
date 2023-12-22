@@ -1,41 +1,39 @@
-import React from "react";
+
 import './CommentItem.css'
-import ThreadItemAuthor from "../thread-item-author/ThreadItemAuthor"
-import ThreadItemReaction from "../thread-item-reaction/ThreadItemReaction";
-import PropTypes, { string } from 'prop-types'
+import ItemAuthor from "../item-author/ItemAuthor"
+import VoteItemReaction from "../vote-item-reaction/VoteItemReaction";
+import PropTypes from 'prop-types'
 import parser from 'html-react-parser'
 export default function CommentItem({
-  id,
-  content,
-  createdAt,
-  owner,
-  upVotes,
-  downVotes,
+  comment,
+  onUpVote,
+  onDownVote,
+  onCancelVote,
 }) {
   return (
     <div className="comment-item">
       <div className="comment-item__author-reaction">
-        <ThreadItemAuthor
-          name={ owner.name }
-          avatarUrl={ owner.avatar }
-          createdAt={ createdAt }
+        <ItemAuthor
+          name={ comment.owner.name }
+          avatarUrl={ comment.owner.avatar }
+          createdAt={ comment.createdAt }
         />
-        <ThreadItemReaction 
-          threadId={ id }
-          upVotes={ upVotes }
-          downVotes={ downVotes }
+        <VoteItemReaction 
+          upVotes={ comment.upVotesBy }
+          downVotes={ comment.downVotesBy }
+          onUpVote={ onUpVote }
+          onDownVote={ onDownVote }
+          onCancelVote={ onCancelVote }
         />
       </div>
-      <div className="comment-item__content">{ content && parser(content) }</div>
+      <div className="comment-item__content">{ comment.content && parser(comment.content) }</div>
     </div>
   )
 }
 
 CommentItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  owner: PropTypes.object.isRequired,
-  upVotes: PropTypes.arrayOf(string).isRequired,
-  downVotes: PropTypes.arrayOf(string).isRequired,
+  comment: PropTypes.object.isRequired,
+  onUpVote: PropTypes.func.isRequired,
+  onDownVote: PropTypes.func.isRequired,
+  onCancelVote: PropTypes.func.isRequired,
 }

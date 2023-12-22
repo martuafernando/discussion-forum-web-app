@@ -1,18 +1,18 @@
-.thread-item-reaction {
+.vote-item-reaction {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   font-size: var(--font-size-small);
 }
 
-.thread-item-reaction__vote {
+.vote-item-reaction__vote {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
 
-.thread-item-reaction__vote button {
+.vote-item-reaction__vote button {
   width: 24px;
   height: 24px;
   padding: 0;

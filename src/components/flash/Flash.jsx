@@ -1,4 +1,4 @@
-import React from "react";
+
 import PropTypes from "prop-types";
 import { FaXmark } from "react-icons/fa6";
 import './Flash.css'
@@ -10,7 +10,7 @@ export default function Flash({ className }) {
   const error = useSelector(store => store.error)
   const { isExist, type, message } = error
 
-  function onCloseHandler(event){
+  function onCloseHandler(){
     dispatch({ type: UNSET_ERROR })
   }
 

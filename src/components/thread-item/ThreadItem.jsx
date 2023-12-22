@@ -1,39 +1,37 @@
-import React from "react";
 import './ThreadItem.css'
-import ThreadItemAuthor from "../thread-item-author/ThreadItemAuthor"
-import ThreadItemReaction from "../thread-item-reaction/ThreadItemReaction";
-import PropTypes, { string } from 'prop-types'
+import ItemAuthor from "../item-author/ItemAuthor"
+import VoteItemReaction from "../vote-item-reaction/VoteItemReaction";
+import PropTypes from 'prop-types'
 import CategoryItem from "../category-item/CategoryItem";
 import parser from 'html-react-parser'
 export default function ThreadItem({
-  id,
-  title,
-  content,
-  category,
-  createdAt,
-  owner,
-  upVotes,
-  downVotes,
-  totalComments,
+  thread,
+  onUpVote,
+  onDownVote,
+  onCancelVote,
+  onComment,
 }) {
   return (
     <div className="thread-item">
-      <h3 className="thread-item__title">{title}</h3>
+      <h3 className="thread-item__title">{ thread.title }</h3>
       <CategoryItem
         className='thread-item__category'
-        display={ category }/>
-      <div className="thread-item__content">{ content && parser(content) }</div>
+        display={ thread.category }/>
+      <div className="thread-item__content">{ thread.body && parser(thread.body) }</div>
       <div className="thread-item__author-reaction">
-        <ThreadItemAuthor
-          name={ owner.name }
-          avatarUrl={ owner.avatar }
-          createdAt={ createdAt }
+        <ItemAuthor
+          name={ thread.owner.name }
+          avatarUrl={ thread.owner.avatar }
+          createdAt={ thread.createdAt }
         />
-        <ThreadItemReaction 
-          threadId={ id }
-          upVotes={ upVotes }
-          downVotes={ downVotes }
-          totalComments={ totalComments }
+        <VoteItemReaction
+          upVotes={ thread.upVotesBy }
+          downVotes={ thread.downVotesBy }
+          totalComments={ thread.totalComments }
+          onUpVote={ onUpVote }
+          onDownVote={ onDownVote }
+          onCancelVote={ onCancelVote }
+          onComment={ onComment }
         />
       </div>
     </div>
@@ -41,13 +39,9 @@ export default function ThreadItem({
 }
 
 ThreadItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  owner: PropTypes.object.isRequired,
-  upVotes: PropTypes.arrayOf(string).isRequired,
-  downVotes: PropTypes.arrayOf(string).isRequired,
-  totalComments: PropTypes.number.isRequired,
+  thread: PropTypes.object.isRequired,
+  onUpVote: PropTypes.func,
+  onDownVote: PropTypes.func,
+  onCancelVote: PropTypes.func,
+  onComment: PropTypes.func,
 }
