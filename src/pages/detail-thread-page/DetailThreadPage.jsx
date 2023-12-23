@@ -49,7 +49,7 @@ export default function DetailThreadPage() {
           />}
           <hr className="detail-thread-page__divider" />
           <h4>{ thread.comments?.length > 0
-            ? `${thread.comments?.length} comments`
+            ? thread.comments?.length > 1 ? `${thread.comments?.length} comments` : `${thread.comments?.length} comment`
             : 'No comments yet' }
           </h4>
           <div className="detail-thread-page__comments">
@@ -76,7 +76,7 @@ export default function DetailThreadPage() {
             <div
               className="textarea detail-thread-page__input-comment"
               onInput={ onBodyChanged }
-              data-placeholder="What are you thinking?"
+              data-placeholder="Your comment..."
               contentEditable/>
             <button className="detail-thread-page__send-comment" type="submit"><FaPaperPlane /></button>
           </div>

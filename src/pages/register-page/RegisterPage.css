@@ -1,5 +1,6 @@
 .register-page{
   max-width: 400px;
+  width: 80vw!important;
   margin: 20vh auto 0!important;
   box-shadow: var(--box-shadow-lg);
   background-color: var(--background-2);
@@ -40,7 +41,7 @@ input {
   width: 100%;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 576px) {
   .register-page {
     padding: 48px;
   }

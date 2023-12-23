@@ -29,7 +29,7 @@ export default function VoteItemReaction({
             ? <FaThumbsUp onClick={ onCancelVote } />
             : <FaRegThumbsUp onClick={ onUpVote } /> }
           </button>
-          <p>{ upVotes.length } likes</p>
+          <p>{ `${upVotes.length} ${upVotes.length > 1 ? 'likes' : 'like'}` }</p>
         </div>
       }
       {(downVotes !== undefined && onDownVote !== undefined) &&
@@ -38,13 +38,13 @@ export default function VoteItemReaction({
             ? <FaThumbsDown onClick={ onCancelVote } />
             : <FaRegThumbsDown onClick={ onDownVote } /> }
           </button>
-          <p>{ downVotes.length } dislikes</p>
+          <p>{ `${downVotes.length} ${downVotes.length > 1 ? 'dislikes' : 'dislike'}` }</p>
         </div>
       }
       {(totalComments !== undefined && onComment !== undefined) && 
         <div className="vote-item-reaction__vote">
           <button><FaRegComment onClick={ onComment }/></button>
-          <p>{ totalComments } comments</p>
+          <p>{ `${totalComments} ${totalComments > 1 ? 'comments' : 'comment'}` }</p>
         </div>
       }
     </div>

@@ -6,6 +6,7 @@ import errorReducer from './states/error/reducer'
 import threadReducer from './states/threads/reducer'
 import leaderboardReducer from './states/leaderboard/reducer'
 import detailThreadReducer from './states/thread/reducer'
+import hamburgerMenuReducer from './states/hamburger-menu/reducer'
 
 export default configureStore({
   reducer: {
@@ -14,7 +15,8 @@ export default configureStore({
     error: errorReducer,
     threads: threadReducer,
     thread: detailThreadReducer,
-    leaderboard: leaderboardReducer
+    leaderboard: leaderboardReducer,
+    hamburgerMenu: hamburgerMenuReducer,
   },
   middleware: [ thunk ]
 })

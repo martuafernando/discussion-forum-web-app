@@ -127,3 +127,12 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+div:empty::before {
+  content: attr(data-placeholder);
+  color: var(--black-2); 
+}
+
+div:empty:focus::before {
+  content: "";
+}

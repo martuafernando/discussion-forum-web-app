@@ -1,5 +1,5 @@
 
-import './CreateThread.css'
+import './CreateThreadPage.css'
 import ModalLayout from "@components/layouts/modal-layout/ModalLayout";
 import SpinningCircle from "@components/spinning-circle/SpinningCircle";
 import { FaXmark } from "react-icons/fa6";

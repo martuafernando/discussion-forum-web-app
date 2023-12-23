@@ -5,7 +5,7 @@ import NotFoundPage from "@pages/not-found-page/NotFoundPage";
 import RegisterPage from '@pages/register-page/RegisterPage';
 import HomePage from "@pages/home-page/HomePage";
 import { useSelector } from "react-redux";
-import CreateThread from "../pages/create-thread/CreateThread";
+import CreateThread from "../pages/create-thread-page/CreateThreadPage";
 import DetailThreadPage from "../pages/detail-thread-page/DetailThreadPage";
 
 export const router = createBrowserRouter(
