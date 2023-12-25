@@ -10,7 +10,7 @@ header {
 
 .header__menu {
   display: none;
-  gap: 16px;
+  gap: 36px;
   position: static;
   flex-direction: row;
   align-items: center;
@@ -24,18 +24,19 @@ header {
   position: fixed;
   gap: 16px;
   top: 0;
-  left: -100vw;
+  right: -100vw;
   bottom: 0;
   z-index: 99;
   background-color: var(--background-2);
-  padding: 96px 36px 24px 24px;
+  padding: 96px 24px 24px 24px;
+  align-items: center;
   justify-content: space-between;
   box-shadow: var(--box-shadow);
-  transition: left ease-out .3s;
+  transition: right ease-in-out .3s;
 }
 
 .header__drawer-menu.active{
-  left: 0;
+  right: 0;
 }
 
 .header__hamburger-menu {
@@ -108,7 +109,6 @@ header {
 @media (min-width: 576px) {
   .header__tool-container {
     flex-direction: row-reverse;
-    align-items: center;
   }
 }
 

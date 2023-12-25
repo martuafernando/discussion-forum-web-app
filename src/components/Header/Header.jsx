@@ -26,16 +26,6 @@ export default function Header() {
     <>
       <header>
         <div className="header__container">
-          {isHamburgerMenuActive
-            ? < FaXmark
-                className='header__hamburger-menu'
-                onClick={ hamburgerMenuToggle }
-              />
-            : < FaBars
-                className='header__hamburger-menu'
-                onClick={ hamburgerMenuToggle }
-              />
-          }
           <img src={logo} alt="Logo" title="logo"/>
           <input className='header__search_box' type="text" name="" id="" />
           <div className="header__menu">
@@ -69,6 +59,16 @@ export default function Header() {
                 </div>
             }
           </div>
+          {isHamburgerMenuActive
+            ? < FaXmark
+                className='header__hamburger-menu'
+                onClick={ hamburgerMenuToggle }
+              />
+            : < FaBars
+                className='header__hamburger-menu'
+                onClick={ hamburgerMenuToggle }
+              />
+          }
         </div>
       </header>
       <div className={ `header__drawer-menu ${isHamburgerMenuActive ? 'active' : ''}` }>
