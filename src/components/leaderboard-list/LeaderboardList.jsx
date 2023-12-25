@@ -24,6 +24,6 @@ export default function LeaderboardList({
   )
 }
 
-LeaderboardList.propType = {
+LeaderboardList.propTypes = {
   leaderboard: PropTypes.array.isRequired
 }

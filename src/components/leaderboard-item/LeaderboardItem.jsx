@@ -25,7 +25,7 @@ export default function LeaderboardItem({
   )
 }
 
-LeaderboardItem.propType = {
+LeaderboardItem.propTypes = {
   rank: PropTypes.number.isRequired,
   user: PropTypes.object.isRequired,
   score: PropTypes.number.isRequired,
