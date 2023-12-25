@@ -6,7 +6,11 @@ class Agent {
   }
 
   setToken(token) {
-    this.token = token;
+    localStorage.setItem('accessToken', token);
+  }
+
+  getToken() {
+    return localStorage.getItem('accessToken');
   }
 
   async delete(endpoint) {
@@ -30,8 +34,8 @@ class Agent {
       'Content-Type': 'application/json',
     };
 
-    if (this.token) {
-      headers.Authorization = `Bearer ${this.token}`;
+    if (this.getToken()) {
+      headers.Authorization = `Bearer ${this.getToken()}`;
     }
 
     const options = {

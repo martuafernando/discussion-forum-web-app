@@ -7,6 +7,7 @@ import threadReducer from './states/threads/reducer'
 import leaderboardReducer from './states/leaderboard/reducer'
 import detailThreadReducer from './states/thread/reducer'
 import hamburgerMenuReducer from './states/hamburger-menu/reducer'
+import preloadReducer from './states/preload/reducer'
 
 export default configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export default configureStore({
     thread: detailThreadReducer,
     leaderboard: leaderboardReducer,
     hamburgerMenu: hamburgerMenuReducer,
+    preload: preloadReducer,
   },
   middleware: [ thunk ]
 })
