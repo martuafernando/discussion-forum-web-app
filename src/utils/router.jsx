@@ -7,6 +7,7 @@ import HomePage from "@pages/home-page/HomePage";
 import { useSelector } from "react-redux";
 import CreateThread from "../pages/create-thread-page/CreateThreadPage";
 import DetailThreadPage from "../pages/detail-thread-page/DetailThreadPage";
+import LeaderboardPage from "../pages/leaderboard-page/LeaderboardPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,7 @@ export const router = createBrowserRouter(
             <Route path='thread/create' element={<CreateThread />} />
             <Route path='thread/:threadId' element={<DetailThreadPage />} />
           </Route>
-          <Route path='leaderboards' element={<HomePage />} />
+          <Route path='leaderboards' element={<LeaderboardPage />} />
           <Route path='profile' element={<HomePage />} />
         </Route>
       </Route>

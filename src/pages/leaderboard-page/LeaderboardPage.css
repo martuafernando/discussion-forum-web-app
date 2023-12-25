@@ -1,0 +1,6 @@
+.leaderboard-page {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 0 16px;
+  margin-top: 128px;
+}

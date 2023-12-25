@@ -1,0 +1,11 @@
+.leaderboard-list {
+  width: 100%;
+  max-width: 576px;
+  margin: auto;
+}
+
+.leaderboard-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
