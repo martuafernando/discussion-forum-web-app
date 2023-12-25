@@ -111,3 +111,7 @@
 .detail-thread-page__send-comment:hover {
   background: none;
 }
+
+.detail-thread-page__flash {
+  margin-bottom: 24px;
+}

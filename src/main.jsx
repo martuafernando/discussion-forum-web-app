@@ -10,7 +10,7 @@ import LoadingBar from 'react-redux-loading-bar'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={ store }>
-      <LoadingBar style={{zIndex: '999', position: 'fixed', left: '0', right: '0'}} />
+      <LoadingBar style={{zIndex: '9999', position: 'fixed', left: '0', right: '0'}} />
       <App />
     </Provider>
   </React.StrictMode>

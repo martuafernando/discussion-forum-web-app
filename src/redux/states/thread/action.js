@@ -53,11 +53,11 @@ export function asyncUpVoteComment(threadId, commentId, userId) {
   return async (dispatch) => {
     try {
       dispatch(showLoading());
-      const response = await agent.Comment.upVoteComment(threadId, commentId);
       dispatch({
         type: INCREASE_COMMENT_LIKES,
         payload: { threadId, commentId, userId }
       });
+      agent.Comment.upVoteComment(threadId, commentId);
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(setError({
@@ -73,11 +73,11 @@ export function asyncDownVoteComment(threadId, commentId, userId) {
   return async (dispatch) => {
     try {
       dispatch(showLoading());
-      const response = await agent.Comment.downVoteComment(threadId, commentId);
       dispatch({
         type: INCREASE_COMMENT_DISLIKES,
         payload: { threadId, commentId, userId }
       });
+      await agent.Comment.downVoteComment(threadId, commentId);
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(setError({
@@ -93,11 +93,11 @@ export function asyncNeutralVoteComment(threadId, commentId, userId) {
   return async (dispatch) => {
     try {
       dispatch(showLoading());
-      const response = await agent.Comment.neutralVoteComment(threadId, commentId);
       dispatch({
         type: NEUTRAL_COMMENT_VOTE,
         payload: { threadId, commentId, userId }
       });
+      await agent.Comment.neutralVoteComment(threadId, commentId);
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(setError({

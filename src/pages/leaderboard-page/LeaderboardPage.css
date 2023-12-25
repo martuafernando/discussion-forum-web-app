@@ -2,5 +2,10 @@
   display: grid;
   grid-template-columns: auto;
   padding: 0 16px;
-  margin-top: 128px;
+  max-width: 576px;
+  margin: 128px auto;
+}
+
+.leaderboard-page__flash {
+  margin-bottom: 24px;
 }

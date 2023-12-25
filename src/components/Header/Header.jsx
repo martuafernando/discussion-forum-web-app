@@ -41,7 +41,7 @@ export default function Header() {
                     size='24px'/>
                   <img
                     className="header__avatar"
-                    src='https://ui-avatars.com/api/?name=testing&background=random' alt="Logo" title="logo"/>
+                    src={ user.avatar } alt="Logo" title="logo"/>
                 </div>
                 </>
               : <div className="header__tool-container">

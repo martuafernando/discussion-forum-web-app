@@ -35,6 +35,7 @@ export default function DetailThreadPage() {
   return (
     <ModalLayout>
       <div className="detail-thread-page">
+        <Flash className="detail-thread-page__flash" />
         <div className="detail-thread-page__title">
           <h2>Thread</h2>
           <FaXmark className="flash__close-button" onClick={ () => navigate('/') }/>

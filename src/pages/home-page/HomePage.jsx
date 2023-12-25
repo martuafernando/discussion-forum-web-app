@@ -8,6 +8,7 @@ import { useNavigate, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { asyncGetThread } from "../../redux/states/threads/action";
 import { asyncGetLeaderboard } from "../../redux/states/leaderboard/action";
+import Flash from "../../components/flash/Flash";
 
 export default function HomePage() {
   const navigate = useNavigate()
@@ -29,6 +30,7 @@ export default function HomePage() {
     <>
       <div className="home-page">
         <main className="home-page__main">
+          <Flash className="home-page__flash" />
           <ThreadCreateNew
             className='home-page__thread-create-new'
             avatarUrl='https://ui-avatars.com/api/?name=testing&background=random'

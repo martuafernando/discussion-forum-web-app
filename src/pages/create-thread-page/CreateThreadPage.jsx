@@ -37,7 +37,7 @@ export default function CreateThread() {
           <h2>Create Thread</h2>
           <FaXmark className="flash__close-button" onClick={onCloseHandler}/>
         </div>
-        <Flash />
+        <Flash className="create-thread__flash" />
         <form className="create-thread__form" onSubmit={onSubmitHandler}>
           <input type="text" name="title" id="title" placeholder="Title"/>
           <input type="text" name="category" id="category" placeholder="Category"/>

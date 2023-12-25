@@ -5,8 +5,8 @@ import {
   useSelector
 } from "react-redux"
 import { asyncGetLeaderboard } from "../../redux/states/leaderboard/action"
-import LeaderboardItem from '../../components/leaderboard-item/LeaderboardItem'
 import LeaderboardList from '../../components/leaderboard-list/LeaderboardList'
+import Flash from '../../components/flash/Flash'
 
 export default function LeaderboardPage() {
   const dispatch = useDispatch()
@@ -19,6 +19,7 @@ export default function LeaderboardPage() {
 
   return (
     <main className="leaderboard-page">
+      <Flash className="leaderboard-page__flash" />
       <LeaderboardList leaderboard={ leaderboard } />
     </main>
   )

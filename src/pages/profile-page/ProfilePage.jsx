@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux'
 import './ProfilePage.css'
+import Flash from '../../components/flash/Flash'
 
 export default function ProfilePage() {
   const user = useSelector(store => store.user)
   return (
     <main className="profile-page">
+      <Flash className="profile-page__flash" />
       <div className="profile-page__user">
         <img
           className="profile-page__user-avatar"

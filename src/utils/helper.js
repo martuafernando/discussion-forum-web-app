@@ -36,7 +36,7 @@ export function calculateDifferenceDate(dateString) {
 export function stringToColor(string) {
   let hash = 0;
   for (let i = 0; i < string.length; i++) {
-    hash = string.charCodeAt(i) + ((hash << 5) - hash);
+    hash = ((hash << 5) + hash) - string.charCodeAt(i);
   }
 
   const hexColor = (hash | 0x000000).toString(16);

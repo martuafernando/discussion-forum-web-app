@@ -26,6 +26,10 @@
   height: 96px;
 }
 
+.profile-page__flash {
+  margin-bottom: 24px;
+}
+
 @media (min-width: 576px) {
   .profile-page {
     flex-direction: row;
