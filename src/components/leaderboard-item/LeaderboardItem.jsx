@@ -1,10 +1,10 @@
-import './LeaderboardItem.css'
-import PropTypes from "prop-types"
+import './LeaderboardItem.css';
+import PropTypes from 'prop-types';
 
 export default function LeaderboardItem({
   rank,
   user,
-  score
+  score,
 }) {
   return (
     <div className="leaderboard-item">
@@ -22,11 +22,11 @@ export default function LeaderboardItem({
       </div>
       <p className="leaderboard-item__score badge h4">{ score }</p>
     </div>
-  )
+  );
 }
 
 LeaderboardItem.propTypes = {
   rank: PropTypes.number.isRequired,
   user: PropTypes.object.isRequired,
   score: PropTypes.number.isRequired,
-}
+};

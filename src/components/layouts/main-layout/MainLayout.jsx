@@ -1,7 +1,7 @@
 
-import { ScrollRestoration, Outlet } from "react-router-dom"
-import Header from "@components/header/Header"
-import './MainLayout.css'
+import {ScrollRestoration, Outlet} from 'react-router-dom';
+import Header from '@components/header/Header';
+import './MainLayout.css';
 
 export default function MainLayout() {
   return (
@@ -11,5 +11,5 @@ export default function MainLayout() {
       <footer>©️ Fernando Sibarani 2023</footer>
       <ScrollRestoration />
     </>
-  )
+  );
 }

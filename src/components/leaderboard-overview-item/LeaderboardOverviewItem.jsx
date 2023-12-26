@@ -1,6 +1,6 @@
 
-import PropTypes from 'prop-types'
-import './LeaderboardOverviewItem.css'
+import PropTypes from 'prop-types';
+import './LeaderboardOverviewItem.css';
 
 export default function LeaderboardOverviewItem({
   rank,
@@ -20,7 +20,7 @@ export default function LeaderboardOverviewItem({
       </div>
       <p className="leaderboard-overview-item__score badge">{ score }</p>
     </div>
-  )
+  );
 }
 
 LeaderboardOverviewItem.propTypes = {
@@ -28,4 +28,4 @@ LeaderboardOverviewItem.propTypes = {
   name: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
-}
+};

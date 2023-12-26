@@ -1,15 +1,15 @@
 import {
   OPEN_HAMBURGER_MENU,
-  CLOSE_HAMBURGER_MENU
-} from "../../actionTypes"
+  CLOSE_HAMBURGER_MENU,
+} from '../../actionTypes';
 
-const initialState = false
+const initialState = false;
 
 export default function hamburgerMenuReducer(state = initialState, action) {
   switch (action.type) {
-    case OPEN_HAMBURGER_MENU: return true
-    case CLOSE_HAMBURGER_MENU: return false
+    case OPEN_HAMBURGER_MENU: return true;
+    case CLOSE_HAMBURGER_MENU: return false;
     default:
-      return state
+      return state;
   }
 }

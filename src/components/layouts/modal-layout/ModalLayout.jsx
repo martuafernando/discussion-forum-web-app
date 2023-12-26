@@ -1,8 +1,8 @@
-import './ModalLayout.css'
-import PropTypes from 'prop-types'
+import './ModalLayout.css';
+import PropTypes from 'prop-types';
 
 export default function ModalLayout({
-  children
+  children,
 }) {
   return (
     <div className="modal-layout__container">
@@ -10,9 +10,9 @@ export default function ModalLayout({
         { children }
       </div>
     </div>
-  )
+  );
 }
 
 ModalLayout.propTypes = {
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};

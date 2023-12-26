@@ -1,33 +1,40 @@
-
-import './CreateThreadPage.css'
-import ModalLayout from "@components/layouts/modal-layout/ModalLayout"
-import SpinningCircle from "@components/spinning-circle/SpinningCircle"
-import { FaXmark } from "react-icons/fa6"
-import { useSelector, useDispatch } from "react-redux"
-import Flash from "@components/flash/Flash"
-import { useNavigate } from "react-router-dom"
-import { asyncCreateThread } from "../../redux/states/threads/action"
-import useInput from "../../hooks/useInput"
+import './CreateThreadPage.css';
+import ModalLayout from '@components/layouts/modal-layout/ModalLayout';
+import SpinningCircle from '@components/spinning-circle/SpinningCircle';
+import {FaXmark} from 'react-icons/fa6';
+import {useSelector, useDispatch} from 'react-redux';
+import Flash from '@components/flash/Flash';
+import {useNavigate} from 'react-router-dom';
+import {asyncCreateThread} from '../../redux/states/threads/action';
+import useInput from '../../hooks/useInput';
 
 export default function CreateThread() {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const loading = useSelector(store => store.loadingBar)
-  const user = useSelector(store => store.user)
-  const [body, onBodyChanged] = useInput('')
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const loading = useSelector((store) => store.loadingBar);
+  const user = useSelector((store) => store.user);
+  const [body, onBodyChanged] = useInput('');
 
-  function onCloseHandler(){
-    navigate('/')
+  function onCloseHandler() {
+    navigate('/');
   }
 
   function onSubmitHandler(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const form = event.target
-    const formData = new FormData(form)
-    const { title, category } = Object.fromEntries(formData.entries())
+    const form = event.target;
+    const formData = new FormData(form);
+    const {title, category} = Object.fromEntries(formData.entries());
 
-    dispatch(asyncCreateThread({ title, category, body, user, onSuccessCallback: onCloseHandler }))
+    dispatch(
+        asyncCreateThread({
+          title,
+          category,
+          body,
+          user,
+          onSuccessCallback: onCloseHandler,
+        }),
+    );
   }
 
   return (
@@ -35,25 +42,32 @@ export default function CreateThread() {
       <div className="create-thread">
         <div className="create-thread__title">
           <h2>Create Thread</h2>
-          <FaXmark className="flash__close-button" onClick={onCloseHandler}/>
+          <FaXmark className="flash__close-button" onClick={onCloseHandler} />
         </div>
         <Flash className="create-thread__flash" />
         <form className="create-thread__form" onSubmit={onSubmitHandler}>
-          <input type="text" name="title" id="title" placeholder="Title"/>
-          <input type="text" name="category" id="category" placeholder="Category"/>
+          <input type="text" name="title" id="title" placeholder="Title" />
+          <input
+            type="text"
+            name="category"
+            id="category"
+            placeholder="Category"
+          />
           <div
             className="textarea"
-            onInput={ onBodyChanged }
+            onInput={onBodyChanged}
             data-placeholder="What are you thinking?"
-            contentEditable/>
+            contentEditable
+          />
           <button
             className="create-thread__action button-filled"
             type="submit"
-            disabled={ loading.default }
-            >{ loading.default ? <SpinningCircle /> : 'Publish' }
+            disabled={loading.default}
+          >
+            {loading.default ? <SpinningCircle /> : 'Publish'}
           </button>
         </form>
       </div>
     </ModalLayout>
-  )
+  );
 }

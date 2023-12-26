@@ -1,27 +1,27 @@
 
-import { useNavigate } from "react-router-dom"
-import useQuery from "../../hooks/useQuery"
-import CategoryItem from "../category-item/CategoryItem"
-import './CategoryList.css'
-import PropTypes from "prop-types"
+import {useNavigate} from 'react-router-dom';
+import useQuery from '../../hooks/useQuery';
+import CategoryItem from '../category-item/CategoryItem';
+import './CategoryList.css';
+import PropTypes from 'prop-types';
 
 export default function CategoryList({
-  categories
+  categories,
 }) {
-  const query = useQuery()
-  const navigate = useNavigate()
-  const currentCategory = query.get('category')
+  const query = useQuery();
+  const navigate = useNavigate();
+  const currentCategory = query.get('category');
 
   function onCategoryItemSelected(category) {
     switch (!!query.get('category')) {
       case true:
-        query.set('category', '')
-        break
+        query.set('category', '');
+        break;
       case false:
-        query.set('category', category)
-        break
+        query.set('category', category);
+        break;
     }
-    navigate(`/?${query}`)
+    navigate(`/?${query}`);
   }
   return (
     <div className="category-list">
@@ -35,13 +35,13 @@ export default function CategoryList({
               className={ currentCategory === category ? 'active' : '' }
               onClick={ () => onCategoryItemSelected(category) }
             />
-          )
+          );
         }) }
       </div>
     </div>
-  )
+  );
 }
 
 CategoryList.propTypes = {
-  categories: PropTypes.array.isRequired
-}
+  categories: PropTypes.array.isRequired,
+};

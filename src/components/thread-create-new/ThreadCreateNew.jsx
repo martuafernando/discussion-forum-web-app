@@ -1,6 +1,6 @@
 
-import './ThreadCreateNew.css'
-import PropTypes from "prop-types"
+import './ThreadCreateNew.css';
+import PropTypes from 'prop-types';
 
 export default function ThreadCreateNew({
   className,
@@ -18,12 +18,11 @@ export default function ThreadCreateNew({
         placeholder="What are you thinking?"
       />
     </div>
-  )
-
+  );
 }
 
 ThreadCreateNew.propTypes = {
   className: PropTypes.string,
   avatarUrl: PropTypes.string,
-  onClick: PropTypes.func.isRequired
-}
+  onClick: PropTypes.func.isRequired,
+};
