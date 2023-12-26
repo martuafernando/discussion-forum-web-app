@@ -1,7 +1,7 @@
 
 import './ItemAuthor.css'
 import PropTypes from 'prop-types'
-import { calculateDifferenceDate } from "../../utils/helper";
+import { calculateDifferenceDate } from "../../utils/helper"
 
 export default function ItemAuthor({
   name,

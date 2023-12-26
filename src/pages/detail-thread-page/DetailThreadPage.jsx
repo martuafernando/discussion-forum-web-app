@@ -1,19 +1,19 @@
 import './DetailThreadPage.css'
-import ModalLayout from "@components/layouts/modal-layout/ModalLayout";
-import ThreadItem from "@components/thread-item/ThreadItem";
-import { FaXmark, FaPaperPlane } from "react-icons/fa6";
-import { useSelector, useDispatch } from "react-redux";
-import Flash from "@components/flash/Flash";
-import { useNavigate, useParams } from "react-router-dom";
-import useInput from "../../hooks/useInput";
-import { useEffect } from "react";
-import { asyncCommentThread, asyncDownVoteComment, asyncGetDetailThread, asyncNeutralVoteComment, asyncUpVoteComment } from "../../redux/states/thread/action";
-import CommentItem from "../../components/comment-item/CommentItem";
+import ModalLayout from "@components/layouts/modal-layout/ModalLayout"
+import ThreadItem from "@components/thread-item/ThreadItem"
+import { FaXmark, FaPaperPlane } from "react-icons/fa6"
+import { useSelector, useDispatch } from "react-redux"
+import Flash from "@components/flash/Flash"
+import { useNavigate, useParams } from "react-router-dom"
+import useInput from "../../hooks/useInput"
+import { useEffect } from "react"
+import { asyncCommentThread, asyncDownVoteComment, asyncGetDetailThread, asyncNeutralVoteComment, asyncUpVoteComment } from "../../redux/states/thread/action"
+import CommentItem from "../../components/comment-item/CommentItem"
 import {
   asyncDownVoteThread,
   asyncNeutralVoteThread,
   asyncUpVoteThread
-} from '../../redux/states/threads/action';
+} from '../../redux/states/threads/action'
 
 export default function DetailThreadPage() {
   const navigate = useNavigate()

@@ -1,8 +1,8 @@
 import './ThreadItem.css'
 import ItemAuthor from "../item-author/ItemAuthor"
-import VoteItemReaction from "../vote-item-reaction/VoteItemReaction";
+import VoteItemReaction from "../vote-item-reaction/VoteItemReaction"
 import PropTypes from 'prop-types'
-import CategoryItem from "../category-item/CategoryItem";
+import CategoryItem from "../category-item/CategoryItem"
 import parser from 'html-react-parser'
 export default function ThreadItem({
   thread,

@@ -1,10 +1,10 @@
 
-import { useSelector, useDispatch } from "react-redux";
-import ThreadItem from "../thread-item/ThreadItem";
+import { useSelector, useDispatch } from "react-redux"
+import ThreadItem from "../thread-item/ThreadItem"
 import './ThreadList.css'
 import PropTypes from "prop-types"
-import { asyncDownVoteThread, asyncNeutralVoteThread, asyncUpVoteThread } from "../../redux/states/threads/action";
-import { useNavigate } from "react-router-dom";
+import { asyncDownVoteThread, asyncNeutralVoteThread, asyncUpVoteThread } from "../../redux/states/threads/action"
+import { useNavigate } from "react-router-dom"
 export default function ThreadList({
   threads,
 }) {

@@ -1,13 +1,13 @@
 
 import './CreateThreadPage.css'
-import ModalLayout from "@components/layouts/modal-layout/ModalLayout";
-import SpinningCircle from "@components/spinning-circle/SpinningCircle";
-import { FaXmark } from "react-icons/fa6";
-import { useSelector, useDispatch } from "react-redux";
-import Flash from "@components/flash/Flash";
-import { useNavigate } from "react-router-dom";
-import { asyncCreateThread } from "../../redux/states/threads/action";
-import useInput from "../../hooks/useInput";
+import ModalLayout from "@components/layouts/modal-layout/ModalLayout"
+import SpinningCircle from "@components/spinning-circle/SpinningCircle"
+import { FaXmark } from "react-icons/fa6"
+import { useSelector, useDispatch } from "react-redux"
+import Flash from "@components/flash/Flash"
+import { useNavigate } from "react-router-dom"
+import { asyncCreateThread } from "../../redux/states/threads/action"
+import useInput from "../../hooks/useInput"
 
 export default function CreateThread() {
   const navigate = useNavigate()

@@ -49,7 +49,7 @@ export default function detailThreadReducer(state = initialState, action) {
           ...state,
           upVotesBy: state.upVotesBy.filter((it) => it !== action.payload.userId),
           downVotesBy: state.downVotesBy.filter((it) => it !== action.payload.userId),
-        };
+        }
         return updatedThread
       }
       return state
@@ -62,7 +62,7 @@ export default function detailThreadReducer(state = initialState, action) {
           ...state.comments[commentIndex],
           upVotesBy: [...state.comments[commentIndex].upVotesBy, action.payload.userId],
           downVotesBy: state.comments[commentIndex].downVotesBy.filter((it) => it !== action.payload.userId),
-        };
+        }
         const updatedThread = {
           ...state,
           comments: [
@@ -82,7 +82,7 @@ export default function detailThreadReducer(state = initialState, action) {
           ...state.comments[commentIndex],
           upVotesBy: state.comments[commentIndex].upVotesBy.filter((it) => it !== action.payload.userId),
           downVotesBy: [...state.comments[commentIndex].downVotesBy, action.payload.userId],
-        };
+        }
         const updatedThread = {
           ...state,
           comments: [
@@ -102,7 +102,7 @@ export default function detailThreadReducer(state = initialState, action) {
           ...state.comments[commentIndex],
           upVotesBy: state.comments[commentIndex].upVotesBy.filter((it) => it !== action.payload.userId),
           downVotesBy: state.comments[commentIndex].downVotesBy.filter((it) => it !== action.payload.userId),
-        };
+        }
         const updatedThread = {
           ...state,
           comments: [

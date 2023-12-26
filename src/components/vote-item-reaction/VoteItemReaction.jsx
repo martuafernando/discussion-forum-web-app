@@ -4,10 +4,10 @@ import {
   FaRegComment,
   FaThumbsUp,
   FaThumbsDown
-} from "react-icons/fa";
+} from "react-icons/fa"
 import './VoteItemReaction.css'
 import PropTypes, { string } from 'prop-types'
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"
 export default function VoteItemReaction({
   upVotes,
   downVotes,

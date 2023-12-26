@@ -2,49 +2,49 @@ const API_ROOT = 'https://forum-api.dicoding.dev/v1'
 
 class Agent {
   constructor(apiRoot) {
-    this.apiRoot = apiRoot;
+    this.apiRoot = apiRoot
   }
 
   setToken(token) {
-    localStorage.setItem('accessToken', token);
+    localStorage.setItem('accessToken', token)
   }
 
   getToken() {
-    return localStorage.getItem('accessToken');
+    return localStorage.getItem('accessToken')
   }
 
   async delete(endpoint) {
-    return await this.fetch(`${endpoint}`, 'DELETE');
+    return await this.fetch(`${endpoint}`, 'DELETE')
   }
 
   async get(endpoint) {
-    return await this.fetch(`${endpoint}`, 'GET');
+    return await this.fetch(`${endpoint}`, 'GET')
   }
 
   async put(endpoint, body) {
-    return await this.fetch(`${endpoint}`, 'PUT', body);
+    return await this.fetch(`${endpoint}`, 'PUT', body)
   }
 
   async post(endpoint, body) {
-    return await this.fetch(`${endpoint}`, 'POST', body);
+    return await this.fetch(`${endpoint}`, 'POST', body)
   }
 
   async fetch(endpoint, method, body) {
     const headers = {
       'Content-Type': 'application/json',
-    };
+    }
 
     if (this.getToken()) {
-      headers.Authorization = `Bearer ${this.getToken()}`;
+      headers.Authorization = `Bearer ${this.getToken()}`
     }
 
     const options = {
       method,
       headers,
-    };
+    }
 
     if (body) {
-      options.body = JSON.stringify(body);
+      options.body = JSON.stringify(body)
     }
 
     const response = await fetch(`${this.apiRoot}${endpoint}`, options)
@@ -54,14 +54,16 @@ class Agent {
   }
 }
 
-const request = new Agent(API_ROOT);
+const request = new Agent(API_ROOT)
 
 const Auth = {
   register: async ({ name, email, password }) =>
     await request.post('/register', { name, email, password }),
   login: async (email, password) =>
     await request.post('/login', { email, password }),
-};
+  logout: () =>
+    request.setToken(''),
+}
 
 const Thread = {
   createThread: async ({ title, category, body }) =>
@@ -78,7 +80,7 @@ const Thread = {
     await request.post(`/threads/${threadId}/down-vote`),
   neutralVoteThread: async (threadId) =>
     await request.post(`/threads/${threadId}/neutral-vote`),
-};
+}
 
 const User = {
   getProfile: async () =>
@@ -107,7 +109,8 @@ export default{
   Thread,
   Comment,
   Leaderboard,
-  setToken: _token => request.setToken(_token)
+  setToken: _token => request.setToken(_token),
+  getToken: () => request.getToken(),
 }
 
 

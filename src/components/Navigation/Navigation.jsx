@@ -10,6 +10,7 @@ export default function Navigation () {
         <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Threads</Link></li>
         <li className={location.pathname === '/leaderboards' ? 'active' : ''}><Link to="/leaderboards">Leaderboards</Link></li>
         <li className={location.pathname === '/profile' ? 'active' : ''}><Link to="/profile">Profil</Link></li>
+        <li ><Link to="/logout">Logout</Link></li>
       </ul>
     </nav>
   )

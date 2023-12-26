@@ -2,13 +2,15 @@
 import './Header.css'
 
 import logo from '@assets/logo.svg'
-import Navigation from "@components/navigation/Navigation";
-import { Link } from "react-router-dom";
-import { FaSun } from "react-icons/fa";
-import { FaBars, FaXmark } from "react-icons/fa6";
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
-import { CLOSE_HAMBURGER_MENU, OPEN_HAMBURGER_MENU } from '../../redux/actionTypes';
+import Navigation from "@components/navigation/Navigation"
+import { Link } from "react-router-dom"
+import { FaSun } from "react-icons/fa"
+import { FaBars, FaXmark } from "react-icons/fa6"
+import {
+  useSelector,
+  useDispatch
+} from "react-redux"
+import { CLOSE_HAMBURGER_MENU, OPEN_HAMBURGER_MENU } from '../../redux/actionTypes'
 
 export default function Header() {
   const dispatch = useDispatch()

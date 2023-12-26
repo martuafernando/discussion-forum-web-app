@@ -1,4 +1,4 @@
-import { SET_ERROR, UNSET_ERROR } from "../../actionTypes";
+import { SET_ERROR, UNSET_ERROR } from "../../actionTypes"
 
 const initialState = {
   isExists: false,

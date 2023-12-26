@@ -1,21 +1,21 @@
-import { useEffect } from "react";
-import ThreadList from "@components/thread-list/ThreadList";
-import CategoryList from "@components/category-list/CategoryList";
-import ThreadCreateNew from "@components/thread-create-new/ThreadCreateNew";
+import { useEffect } from "react"
+import ThreadList from "@components/thread-list/ThreadList"
+import CategoryList from "@components/category-list/CategoryList"
+import ThreadCreateNew from "@components/thread-create-new/ThreadCreateNew"
 import './HomePage.css'
-import LeaderboardOverviewList from "@components/leaderboard-overview-list/LeaderboardOverviewList";
-import { useNavigate, Outlet } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { asyncGetThread } from "../../redux/states/threads/action";
-import { asyncGetLeaderboard } from "../../redux/states/leaderboard/action";
-import Flash from "../../components/flash/Flash";
+import LeaderboardOverviewList from "@components/leaderboard-overview-list/LeaderboardOverviewList"
+import { useNavigate, Outlet } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { asyncGetThread } from "../../redux/states/threads/action"
+import { asyncGetLeaderboard } from "../../redux/states/leaderboard/action"
+import Flash from "../../components/flash/Flash"
 
 export default function HomePage() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const threads = useSelector(store => store.threads)
   const leaderboard = useSelector(store => store.leaderboard)
-  const categories = threads ? Array.from(new Set(threads.map(thread => thread.category))) : [];
+  const categories = threads ? Array.from(new Set(threads.map(thread => thread.category))) : []
 
   useEffect(() => {
     dispatch(asyncGetThread())
