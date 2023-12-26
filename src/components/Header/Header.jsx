@@ -51,7 +51,7 @@ export default function Header() {
             <FaMagnifyingGlass />
           </form>
           <div className="header__menu">
-            { user.avatar
+            { user?.avatar
               ? <>
                 <Navigation></Navigation>
                 <div className="header__tool-container">
@@ -63,7 +63,7 @@ export default function Header() {
                     size='24px'/>
                   <img
                     className="header__avatar"
-                    src={ user.avatar } alt="Logo" title="logo"/>
+                    src={ user?.avatar } alt="Logo" title="logo"/>
                 </div>
                 </>
               : <div className="header__tool-container">
@@ -94,13 +94,13 @@ export default function Header() {
         </div>
       </header>
       <div className={ `header__drawer-menu ${isHamburgerMenuActive ? 'active' : ''}` }>
-          { user.avatar
+          { user?.avatar
             ? <>
               <Navigation></Navigation>
                 <div className="header__tool-container">
                 <img
                   className="header__avatar"
-                  src={ user.avatar } alt="Logo" title="logo"/>
+                  src={ user?.avatar } alt="Logo" title="logo"/>
                   <div className="header__tool">
                     <img
                       className="header__language-toggle"
