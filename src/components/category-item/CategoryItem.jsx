@@ -1,7 +1,7 @@
 
 import './CategoryItem.css'
-import { Link } from "react-router-dom"
-import { stringToColor } from "../../utils/helper"
+import { Link } from "react-router-dom";
+import { stringToColor } from "../../utils/helper";
 import PropTypes from "prop-types"
 
 export default function CategoryItem({

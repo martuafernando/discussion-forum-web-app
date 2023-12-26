@@ -5,15 +5,23 @@ import logo from '@assets/logo.svg'
 import Navigation from "@components/navigation/Navigation"
 import { Link } from "react-router-dom"
 import { FaSun } from "react-icons/fa"
-import { FaBars, FaXmark } from "react-icons/fa6"
+import {
+  FaBars,
+  FaXmark,
+  FaMagnifyingGlass
+} from "react-icons/fa6"
 import {
   useSelector,
   useDispatch
 } from "react-redux"
 import { CLOSE_HAMBURGER_MENU, OPEN_HAMBURGER_MENU } from '../../redux/actionTypes'
+import { useNavigate } from 'react-router-dom'
+import useQuery from '../../hooks/useQuery'
 
 export default function Header() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const query = useQuery()
   const user = useSelector(store => store.user)
   const isHamburgerMenuActive = useSelector(store => store.hamburgerMenu)
 
@@ -24,12 +32,24 @@ export default function Header() {
     }
   }
 
+  function onSearchHandler(event) {
+    event.preventDefault()
+    const form = event.target
+    const formData = new FormData(form)
+    const { keyword } = Object.fromEntries(formData.entries())
+    query.set('keyword', keyword)
+    navigate(`/?${query}`)
+  }
+
   return (
     <>
       <header>
         <div className="header__container">
           <img src={logo} alt="Logo" title="logo"/>
-          <input className='header__search_box' type="text" name="" id="" />
+          <form className="header__search_box" onSubmit={ onSearchHandler }>
+            <input className='header__search_input' type="text" name="keyword" id="keyword" placeholder={ query.get('keyword') || 'Search...' }/>
+            <FaMagnifyingGlass />
+          </form>
           <div className="header__menu">
             { user.avatar
               ? <>

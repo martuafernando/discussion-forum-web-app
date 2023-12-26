@@ -7,6 +7,10 @@
   padding: 16px;
 }
 
+.thread-list__null-announcement {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .thread-list > .thread-item {
     padding: 48px;

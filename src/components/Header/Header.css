@@ -96,6 +96,15 @@ header {
 
 .header__search_box {
   width: 100%;
+  position: relative;
+}
+
+.header__search_box :last-child {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 20px;
+  color: var(--black-2);
 }
 
 .header__sign_button {

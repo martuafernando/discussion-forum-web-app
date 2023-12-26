@@ -24,6 +24,6 @@ export default function ThreadCreateNew({
 
 ThreadCreateNew.propTypes = {
   className: PropTypes.string,
-  avatarUrl: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string,
   onClick: PropTypes.func.isRequired
 }

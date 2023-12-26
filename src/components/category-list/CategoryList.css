@@ -13,3 +13,8 @@
   gap: 8px;
   flex-wrap: wrap;
 }
+
+.category-list__content .active {
+  border-bottom: 4px solid var(--black-1);
+  margin-bottom: -4px;
+}
