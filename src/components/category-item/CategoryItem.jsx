@@ -12,7 +12,7 @@ export default function CategoryItem({
   return (
     <Link
       onClick={ onClick }
-      className={`category-item badge ${ className }`}
+      className={`category-item badge ${ (className !== undefined) ? className : '' }`}
       style={{backgroundColor: `${stringToColor(display)}`}}
     >#{ display }
     </Link>
