@@ -56,7 +56,7 @@ export default function HomePage() {
           <Flash className="home-page__flash" />
           <ThreadCreateNew
             className="home-page__thread-create-new"
-            avatarUrl={user.avatar}
+            avatarUrl={user?.avatar}
             onClick={onCreateThreadClickedHandler}
           />
           <ThreadList threads={filteredThreads} />
