@@ -7,11 +7,11 @@ import PropTypes from "prop-types"
 export default function CategoryItem({
   className,
   display,
-  urlDestination,
+  onClick,
 }) {
   return (
     <Link
-      to={ urlDestination }
+      onClick={ onClick }
       className={`category-item badge ${ className }`}
       style={{backgroundColor: `${stringToColor(display)}`}}
       >#{ display }
@@ -22,5 +22,5 @@ export default function CategoryItem({
 CategoryItem.propTypes = {
   className: PropTypes.string,
   display: PropTypes.string.isRequired,
-  urlDestination: PropTypes.string
+  onClick: PropTypes.func
 }
