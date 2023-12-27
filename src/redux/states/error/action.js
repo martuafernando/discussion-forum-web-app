@@ -8,7 +8,7 @@ export function setError({
     dispatch({
       type: SET_ERROR,
       payload: {
-        isExist: true,
+        isExists: true,
         type,
         message,
       },
