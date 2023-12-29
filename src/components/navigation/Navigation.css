@@ -1,0 +1,31 @@
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav li a{
+  color: var(--dark-text-emphasis);
+}
+
+nav li.active a{
+  color: var(--primary)!important;
+}
+
+nav li.active {
+  border-bottom: 2px solid var(--primary);
+}
+
+ul {
+  padding: 0;
+}
+
+@media (min-width: 768px) { 
+  nav ul {
+    flex-direction: row;
+  }
+}
