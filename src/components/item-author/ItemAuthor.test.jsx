@@ -7,9 +7,15 @@ import {
 import {
   cleanup,
   render,
-  screen,
 } from '@testing-library/react';
 import ItemAuthor from './ItemAuthor';
+
+/**
+ * Testing scenario
+ *
+ * - ItemAuthor component
+ *  - should show the ItemAuthor
+ */
 
 describe('ItemAuthor component', () => {
   afterEach(() => {
@@ -18,12 +24,12 @@ describe('ItemAuthor component', () => {
 
   it('should show the ItemAuthor', () => {
     // Arrange
-    const { container } = render(
+    const {container} = render(
         <ItemAuthor
           name='testing-name'
           avatarUrl='testing-url'
           createdAt='2021-06-21T07:00:00.000Z'
-        />
+        />,
     );
     const component = container.querySelector('.item-author');
 

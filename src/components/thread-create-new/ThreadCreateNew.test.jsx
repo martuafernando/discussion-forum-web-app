@@ -1,4 +1,5 @@
 import {
+  vi,
   describe,
   it,
   expect,
@@ -7,11 +8,18 @@ import {
 import {
   cleanup,
   render,
-  screen,
 } from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import ThreadCreateNew from './ThreadCreateNew';
+
+/**
+ * Testing scenario
+ *
+ * - ThreadCreateNew component
+ *  - should show the ThreadCreateNew display
+ *  - should execute onClick function when component clicked
+ */
 
 describe('ThreadCreateNew component', () => {
   afterEach(() => {
@@ -20,7 +28,7 @@ describe('ThreadCreateNew component', () => {
 
   it('should show the ThreadCreateNew display', () => {
     // Arrange
-    const { container } = render(
+    const {container} = render(
         <ThreadCreateNew
           avatarUrl='testing-url'
           onClick={() => {}}
@@ -33,10 +41,10 @@ describe('ThreadCreateNew component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show the ThreadCreateNew display', async () => {
+  it('should execute onClick function when component clicked', async () => {
     // Arrange
-    const mockFunction = vi.fn()
-    const { container } = render(
+    const mockFunction = vi.fn();
+    const {container} = render(
         <ThreadCreateNew
           avatarUrl='testing-url'
           onClick={ mockFunction }
@@ -46,9 +54,9 @@ describe('ThreadCreateNew component', () => {
     const component = container.querySelector('.thread-create-new');
 
     // action
-    await userEvent.click(component)
+    await userEvent.click(component);
 
     // Assert
-    expect(mockFunction).toBeCalled()
+    expect(mockFunction).toBeCalled();
   });
 });

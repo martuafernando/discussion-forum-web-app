@@ -1,4 +1,5 @@
 import {
+  vi,
   describe,
   it,
   expect,
@@ -12,6 +13,14 @@ import {
 import {MemoryRouter} from 'react-router-dom';
 import CategoryItem from './CategoryItem';
 import userEvent from '@testing-library/user-event';
+
+/**
+ * Testing Scenario
+ *
+ * - CategoryItem component
+ *  - should show the category display
+ *  - should call function when clicked
+ */
 
 describe('CategoryItem component', () => {
   afterEach(() => {
@@ -34,7 +43,7 @@ describe('CategoryItem component', () => {
 
   it('should call function when clicked', async () => {
     // Arrange
-    const mockFunction = vi.fn()
+    const mockFunction = vi.fn();
     render(
         <CategoryItem
           display="testing"
@@ -45,10 +54,10 @@ describe('CategoryItem component', () => {
     const component = screen.getByText('#testing');
 
     // Action
-    await userEvent.click(component)
+    await userEvent.click(component);
 
     // Assert
     expect(component).exist;
-    expect(mockFunction).toBeCalled()
+    expect(mockFunction).toBeCalled();
   });
 });

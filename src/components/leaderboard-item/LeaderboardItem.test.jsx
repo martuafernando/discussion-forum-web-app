@@ -10,6 +10,13 @@ import {
 } from '@testing-library/react';
 import LeaderboardItem from './LeaderboardItem';
 
+/**
+ * Testing scenario
+ *
+ * - LeaderboardItem component
+ *  - should show the Leaderboard Item
+ */
+
 describe('LeaderboardItem component', () => {
   afterEach(() => {
     cleanup();
@@ -17,16 +24,16 @@ describe('LeaderboardItem component', () => {
 
   it('should show the Leaderboard Item', () => {
     // Arrange
-    const { container } = render(
+    const {container} = render(
         <LeaderboardItem
           rank={1}
           user={ {
-            id: "users-1",
-            name: "John Doe",
-            avatar: "https://generated-image-url.jpg",
+            id: 'users-1',
+            name: 'John Doe',
+            avatar: 'https://generated-image-url.jpg',
           } }
           score={100}
-        />
+        />,
     );
     const component = container.querySelector('.leaderboard-item');
 

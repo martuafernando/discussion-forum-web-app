@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     "require-jsdoc" : 0,
+    "max-len" : 0,
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },

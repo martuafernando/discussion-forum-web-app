@@ -46,6 +46,9 @@ devDependencies:
   '@testing-library/react':
     specifier: ^14.1.2
     version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
+  '@testing-library/react-hooks':
+    specifier: ^8.0.1
+    version: 8.0.1(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
   '@testing-library/user-event':
     specifier: ^14.5.1
     version: 14.5.1(@testing-library/dom@9.3.3)
@@ -834,6 +837,29 @@ packages:
       lodash: 4.17.21
       redent: 3.0.0
       vitest: 1.1.0(jsdom@23.0.1)
+    dev: true
+
+  /@testing-library/react-hooks@8.0.1(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@types/react': ^16.9.0 || ^17.0.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+      react-test-renderer: ^16.9.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react-dom:
+        optional: true
+      react-test-renderer:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.6
+      '@types/react': 18.2.45
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-error-boundary: 3.1.4(react@18.2.0)
     dev: true
 
   /@testing-library/react@14.1.2(react-dom@18.2.0)(react@18.2.0):
@@ -2783,6 +2809,16 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-error-boundary@3.1.4(react@18.2.0):
+    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.23.6
+      react: 18.2.0
+    dev: true
 
   /react-icons@4.12.0(react@18.2.0):
     resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}

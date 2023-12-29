@@ -10,6 +10,13 @@ import {
 } from '@testing-library/react';
 import LeaderboardOverviewItem from './LeaderboardOverviewItem';
 
+/**
+ * Testing scenario
+ *
+ * - LeaderboardOverviewItem component
+ *  - should show the Leaderboard Overview Item
+ */
+
 describe('LeaderboardOverviewItem component', () => {
   afterEach(() => {
     cleanup();
@@ -17,13 +24,13 @@ describe('LeaderboardOverviewItem component', () => {
 
   it('should show the Leaderboard Overview Item', () => {
     // Arrange
-    const { container } = render(
+    const {container} = render(
         <LeaderboardOverviewItem
           rank={1}
           name="John Doe"
           avatarUrl="https://generated-image-url.jpg"
           score={100}
-        />
+        />,
     );
     const component = container.querySelector('.leaderboard-overview-item');
 

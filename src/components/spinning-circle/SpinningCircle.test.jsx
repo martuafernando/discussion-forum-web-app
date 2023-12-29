@@ -10,6 +10,13 @@ import {
 } from '@testing-library/react';
 import SpinningCircle from './SpinningCircle';
 
+/**
+ * Testing scenario
+ *
+ * - Navigation component
+ *  - should show the navigation
+ */
+
 describe('Navigation component', () => {
   afterEach(() => {
     cleanup();
@@ -17,8 +24,8 @@ describe('Navigation component', () => {
 
   it('should show the navigation', () => {
     // Arrange
-    const { container } = render(
-      <SpinningCircle />
+    const {container} = render(
+        <SpinningCircle />,
     );
     const component = container.querySelector('.spinning-circle');
 

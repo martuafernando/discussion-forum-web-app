@@ -10,7 +10,14 @@ import {
 } from '@testing-library/react';
 import LeaderboardList from './LeaderboardList';
 
-describe('LeaderboardIList component', () => {
+/**
+ * Testing scenario
+ *
+ * - LeaderboardList component
+ *  - should show the Leaderboard Item
+ */
+
+describe('LeaderboardList component', () => {
   afterEach(() => {
     cleanup();
   });
@@ -21,31 +28,31 @@ describe('LeaderboardIList component', () => {
       {
         rank: 1,
         user: {
-          id: "users-1",
-          name: "John Doe",
-          avatar: "https://generated-image-url.jpg",
+          id: 'users-1',
+          name: 'John Doe',
+          avatar: 'https://generated-image-url.jpg',
         },
-        score: 100
+        score: 100,
       },
       {
         rank: 2,
         user: {
-          id: "users-2",
-          name: "John Doe",
-          avatar: "https://generated-image-url.jpg",
+          id: 'users-2',
+          name: 'John Doe',
+          avatar: 'https://generated-image-url.jpg',
         },
-        score: 90
+        score: 90,
       },
-    ]
-    const { container } = render(
+    ];
+    const {container} = render(
         <LeaderboardList
           leaderboard={leaderboard}
-        />
+        />,
     );
     const component = container.querySelector('.leaderboard-list');
 
     // Assert
     expect(component).toBeTruthy();
-    expect(component.querySelectorAll('.leaderboard-item')).toHaveLength(2)
+    expect(component.querySelectorAll('.leaderboard-item')).toHaveLength(2);
   });
 });

@@ -80,14 +80,14 @@ export function asyncGetThread() {
 
 export function asyncUpVoteThread(threadId, userId) {
   return async (dispatch) => {
-    dispatch({
-      type: INCREASE_THREAD_LIKES,
-      payload: {threadId, userId},
-    });
-
     try {
+      dispatch({
+        type: INCREASE_THREAD_LIKES,
+        payload: {threadId, userId},
+      });
+
       dispatch(showLoading());
-      agent.Thread.upVoteThread(threadId);
+      await agent.Thread.upVoteThread(threadId);
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
