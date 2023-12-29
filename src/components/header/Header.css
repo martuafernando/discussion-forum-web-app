@@ -1,0 +1,140 @@
+header {
+  background-color: var(--body-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: var(--box-shadow-sm);
+  z-index: 999;
+}
+
+.header__menu {
+  display: none;
+  gap: 36px;
+  position: static;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: none;
+  padding: 0;
+}
+
+.header__drawer-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  gap: 16px;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
+  z-index: 99;
+  background-color: var(--background-2);
+  padding: 96px 24px 24px 24px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+  transition: right ease-in-out .3s;
+}
+
+.header__drawer-menu.active{
+  right: 0;
+}
+
+.header__hamburger-menu {
+  font-size: 24px;
+}
+
+.header__container {
+  padding: 8px 16px;
+
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.header__avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.header__tool-container {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header__tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__language-toggle {
+  border-radius: 50%;
+  border: 1px solid var(--black-1);
+}
+
+.header__theme-toggle,
+.header__language-toggle {
+  cursor: pointer;
+}
+
+.header__container > img {
+  width: 48px;
+}
+
+.header__container .button-outlined{
+  padding: 12px 24px!important;
+}
+
+.header__search_box {
+  width: 100%;
+  position: relative;
+}
+
+.header__search_box :last-child {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 20px;
+  color: var(--black-2);
+}
+
+.header__sign_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .header__tool-container {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__drawer-menu {
+    display: none;
+  }
+
+  .header__menu {
+    display: flex;
+  }
+
+  .header__container {
+    padding: 8px 48px;
+  }
+
+  .header__hamburger-menu {
+    display: none;
+  }
+}
