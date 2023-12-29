@@ -49,7 +49,7 @@ describe('CategoryList component', () => {
     const categoryItemActive = container.querySelector('.category-item.active');
 
     // Assert
-    expect(categoryItemActive).toBeFalsy();
+    expect(categoryItemActive).toBeTruthy();
   });
 
   it('should remove class active when active category clicked', async () => {
