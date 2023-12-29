@@ -1,8 +1,7 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
+import {action} from '@storybook/addon-actions';
 import CommentItem from './CommentItem';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
 
 export default {
   title: 'CommentItem',
