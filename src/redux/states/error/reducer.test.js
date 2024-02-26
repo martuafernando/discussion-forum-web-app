@@ -1,18 +1,18 @@
 import {describe, it, expect} from 'vitest';
-import errorReducer from './reducer';
-import {SET_ERROR, UNSET_ERROR} from '../../actionTypes';
+import messageReducer from './reducer';
+import {SET_MESSAGE, UNSET_MESSAGE} from '../../actionTypes';
 
 /**
  * Testing scenario
  *
- * - errorReducer
+ * - messageReducer
  *  - should handle initial state for undefined state
- *  - should handle SET_ERROR action correctly
- *  - should handle UNSET_ERROR action correctly
+ *  - should handle SET_MESSAGE action correctly
+ *  - should handle UNSET_MESSAGE action correctly
  *  - should handle unknown action
  */
 
-describe('errorReducer', () => {
+describe('messageReducer', () => {
   it('should handle initial state for undefined state', () => {
     // Arrange
     const initialState = {
@@ -26,13 +26,13 @@ describe('errorReducer', () => {
     };
 
     // Action
-    const newState = errorReducer(undefined, action);
+    const newState = messageReducer(undefined, action);
 
     // Assert
     expect(newState).toEqual(initialState);
   });
 
-  it('should handle SET_ERROR action correctly', () => {
+  it('should handle SET_MESSAGE action correctly', () => {
     // Arrange
     const initialState = {
       isExists: false,
@@ -41,7 +41,7 @@ describe('errorReducer', () => {
     };
 
     const action = {
-      type: SET_ERROR,
+      type: SET_MESSAGE,
       payload: {
         isExists: true,
         type: 'someType',
@@ -50,13 +50,13 @@ describe('errorReducer', () => {
     };
 
     // Action
-    const newState = errorReducer(initialState, action);
+    const newState = messageReducer(initialState, action);
 
     // Assert
     expect(newState).toEqual(action.payload);
   });
 
-  it('should handle UNSET_ERROR action correctly', () => {
+  it('should handle UNSET_MESSAGE action correctly', () => {
     // Arrange
     const initialState = {
       isExists: false,
@@ -70,11 +70,11 @@ describe('errorReducer', () => {
     };
 
     const action = {
-      type: UNSET_ERROR,
+      type: UNSET_MESSAGE,
     };
 
     // Action
-    const newState = errorReducer(currentState, action);
+    const newState = messageReducer(currentState, action);
 
     // Assert
     expect(newState).toEqual(initialState);
@@ -94,7 +94,7 @@ describe('errorReducer', () => {
     };
 
     // Action
-    const newState = errorReducer(currentState, action);
+    const newState = messageReducer(currentState, action);
 
     // Assert
     expect(newState).toEqual(currentState);

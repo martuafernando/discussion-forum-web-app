@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import {createStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
 import Flash from './Flash';
-import {UNSET_ERROR} from '../../redux/actionTypes';
+import {UNSET_MESSAGE} from '../../redux/actionTypes';
 
 /**
  * Testing scenario
@@ -76,7 +76,7 @@ describe('Flash component', () => {
       message: 'testing-message',
     };
     const mockStore = createStore((state = {error}, action) => {
-      if (action.type === UNSET_ERROR) {
+      if (action.type === UNSET_MESSAGE) {
         return {
           error: {
             isExists: false,

@@ -15,7 +15,7 @@ import {
   NEUTRAL_COMMENT_VOTE,
   SET_THREAD,
 } from '../../actionTypes';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 
 /**
  * Testing scenario
@@ -38,7 +38,7 @@ import {setError} from '../error/action';
  */
 
 vi.mock('../error/action', () => ({
-  setError: vi.fn(),
+  setMessage: vi.fn(),
 }));
 
 describe('asyncGetDetailThread', () => {
@@ -149,7 +149,7 @@ describe('asyncGetDetailThread', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'failed message',
     });
@@ -221,7 +221,7 @@ describe('asyncCommentThread', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });
@@ -299,7 +299,7 @@ describe('asyncUpVoteComment', () => {
       },
     });
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });
@@ -377,7 +377,7 @@ describe('asyncDownVoteComment', () => {
       },
     });
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });
@@ -447,7 +447,7 @@ describe('asyncNeutralVoteComment', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });

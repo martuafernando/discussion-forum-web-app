@@ -4,7 +4,7 @@ import {asyncGetLeaderboard} from './action';
 import {showLoading} from 'react-redux-loading-bar';
 import {SET_LEADERBOARD} from '../../actionTypes';
 import {hideLoading} from 'react-redux-loading-bar';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 
 /**
  * Testing scenario
@@ -15,7 +15,7 @@ import {setError} from '../error/action';
  */
 
 vi.mock('../error/action', () => ({
-  setError: vi.fn(),
+  setMessage: vi.fn(),
 }));
 
 describe('asyncGetLeaderboard', () => {
@@ -112,7 +112,7 @@ describe('asyncGetLeaderboard', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'failed message',
     });
