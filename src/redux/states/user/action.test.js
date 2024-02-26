@@ -163,8 +163,11 @@ describe('asyncRegisterUser', () => {
 
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
-    expect(dispatch).toHaveBeenCalledWith({type: UNSET_MESSAGE});
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
+    expect(dispatch).toHaveBeenCalledWith(setMessage({
+      type: 'success',
+      message: 'Register success, please login'
+    }));
   });
 
   it('should dispatch action correctly when data fetching failed', async () => {
