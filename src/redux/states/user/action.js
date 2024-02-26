@@ -1,6 +1,7 @@
 import agent from '../../../utils/agent';
 import {hideLoading, showLoading} from 'react-redux-loading-bar';
 import {
+  SET_MESSAGE,
   SET_PRELOAD,
   SET_USER,
   UNSET_MESSAGE,
@@ -43,12 +44,10 @@ export function asyncRegisterUser({name, email, password}) {
         email,
         password,
       });
-      dispatch(
-        setMessage({
-          type: 'success',
-          message: 'Register success, please login',
-        }),
-    );
+      dispatch(setMessage({
+        type: 'success',
+        message: 'Register success, please login'
+      }));
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
