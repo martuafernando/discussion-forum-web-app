@@ -1,6 +1,6 @@
 import agent from '../../../utils/agent';
 import {hideLoading, showLoading} from 'react-redux-loading-bar';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 import {
   ADD_COMMENT,
   INCREASE_COMMENT_DISLIKES,
@@ -20,7 +20,7 @@ export function asyncGetDetailThread(threadId) {
       });
       return dispatch(hideLoading());
     } catch (error) {
-      dispatch(setError({
+      dispatch(setMessage({
         type: 'error',
         message: error.message,
       }));
@@ -40,7 +40,7 @@ export function asyncCommentThread(threadId, comment) {
       });
       return dispatch(hideLoading());
     } catch (error) {
-      dispatch(setError({
+      dispatch(setMessage({
         type: 'error',
         message: error.message,
       }));
@@ -65,7 +65,7 @@ export function asyncUpVoteComment(threadId, commentId, userId) {
         type: NEUTRAL_COMMENT_VOTE,
         payload: {threadId, commentId, userId},
       });
-      dispatch(setError({
+      dispatch(setMessage({
         type: 'error',
         message: error.message,
       }));
@@ -90,7 +90,7 @@ export function asyncDownVoteComment(threadId, commentId, userId) {
         type: NEUTRAL_COMMENT_VOTE,
         payload: {threadId, commentId, userId},
       });
-      dispatch(setError({
+      dispatch(setMessage({
         type: 'error',
         message: error.message,
       }));
@@ -110,7 +110,7 @@ export function asyncNeutralVoteComment(threadId, commentId, userId) {
       await agent.Comment.neutralVoteComment(threadId, commentId);
       return dispatch(hideLoading());
     } catch (error) {
-      dispatch(setError({
+      dispatch(setMessage({
         type: 'error',
         message: error.message,
       }));

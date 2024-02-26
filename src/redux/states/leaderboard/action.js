@@ -1,6 +1,6 @@
 import agent from '../../../utils/agent';
 import {hideLoading, showLoading} from 'react-redux-loading-bar';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 import {
   SET_LEADERBOARD,
 } from '../../actionTypes';
@@ -16,7 +16,7 @@ export function asyncGetLeaderboard() {
       });
       return dispatch(hideLoading());
     } catch (error) {
-      dispatch(setError({
+      dispatch(setMessage({
         type: 'error',
         message: error.message,
       }));

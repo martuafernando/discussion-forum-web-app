@@ -3,11 +3,11 @@ import {hideLoading, showLoading} from 'react-redux-loading-bar';
 import {
   SET_PRELOAD,
   SET_USER,
-  UNSET_ERROR,
+  UNSET_MESSAGE,
   UNSET_PRELOAD,
   UNSET_USER,
 } from '../../actionTypes';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 
 export function asyncLoginUser(email, password) {
   return async (dispatch) => {
@@ -20,11 +20,11 @@ export function asyncLoginUser(email, password) {
         type: SET_USER,
         payload: profile.data.user,
       });
-      dispatch({type: UNSET_ERROR});
+      dispatch({type: UNSET_MESSAGE});
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
@@ -43,11 +43,16 @@ export function asyncRegisterUser({name, email, password}) {
         email,
         password,
       });
-      dispatch({type: UNSET_ERROR});
+      dispatch(
+        setMessage({
+          type: 'success',
+          message: 'Register success, please login',
+        }),
+    );
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
@@ -67,7 +72,7 @@ export function asyncGetProfile() {
         type: SET_USER,
         payload: profile.data.user,
       });
-      dispatch({type: UNSET_ERROR});
+      dispatch({type: UNSET_MESSAGE});
       dispatch({type: UNSET_PRELOAD});
       return dispatch(hideLoading());
     } catch (error) {
@@ -87,7 +92,7 @@ export function logoutUser() {
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),

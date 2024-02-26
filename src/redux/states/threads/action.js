@@ -1,6 +1,6 @@
 import agent from '../../../utils/agent';
 import {hideLoading, showLoading} from 'react-redux-loading-bar';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 import {
   ADD_THREAD,
   INCREASE_THREAD_DISLIKES,
@@ -35,7 +35,7 @@ export function asyncCreateThread({
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
@@ -68,7 +68,7 @@ export function asyncGetThread() {
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
@@ -91,7 +91,7 @@ export function asyncUpVoteThread(threadId, userId) {
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
@@ -118,7 +118,7 @@ export function asyncDownVoteThread(threadId, userId) {
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
@@ -145,7 +145,7 @@ export function asyncNeutralVoteThread(threadId, userId) {
       return dispatch(hideLoading());
     } catch (error) {
       dispatch(
-          setError({
+          setMessage({
             type: 'error',
             message: error.message,
           }),
