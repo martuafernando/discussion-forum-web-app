@@ -1,4 +1,4 @@
-import {SET_ERROR, UNSET_ERROR} from '../../actionTypes';
+import {SET_MESSAGE, UNSET_MESSAGE} from '../../actionTypes';
 
 const initialState = {
   isExists: false,
@@ -6,11 +6,11 @@ const initialState = {
   message: '',
 };
 
-export default function errorReducer(state = initialState, action) {
+export default function messageReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_ERROR:
+    case SET_MESSAGE:
       return action.payload;
-    case UNSET_ERROR:
+    case UNSET_MESSAGE:
       return initialState;
     default:
       return state;

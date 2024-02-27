@@ -1,15 +1,15 @@
-import {setError} from './action';
+import {setMessage} from './action';
 import {vi, describe, it, expect} from 'vitest';
-import {SET_ERROR} from '../../actionTypes';
+import {SET_MESSAGE} from '../../actionTypes';
 
 /**
  * Testing scenario
  *
- * - setError function
+ * - setMessage function
  *  - should dispatch action correctly
  */
 
-describe('setError function', () => {
+describe('setMessage function', () => {
   it('should dispatch action correctly', () => {
     // Arrange
     const error = {
@@ -19,11 +19,11 @@ describe('setError function', () => {
     const dispatch = vi.fn();
 
     // Action
-    setError(error)(dispatch);
+    setMessage(error)(dispatch);
 
     // Assert
     expect(dispatch).toHaveBeenCalledWith({
-      type: SET_ERROR,
+      type: SET_MESSAGE,
       payload: {
         isExists: true,
         type: 'ERROR',

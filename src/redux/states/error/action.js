@@ -1,12 +1,12 @@
-import {SET_ERROR} from '../../actionTypes';
+import {SET_MESSAGE} from '../../actionTypes';
 
-export function setError({
+export function setMessage({
   type,
   message,
 }) {
   return (dispatch) => {
     dispatch({
-      type: SET_ERROR,
+      type: SET_MESSAGE,
       payload: {
         isExists: true,
         type,

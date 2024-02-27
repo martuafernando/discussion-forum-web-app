@@ -15,7 +15,7 @@ import {
   NEUTRAL_THREAD_VOTE,
   SET_THREADS,
 } from '../../actionTypes';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 
 /**
  * Testing scenario
@@ -38,7 +38,7 @@ import {setError} from '../error/action';
  */
 
 vi.mock('../error/action', () => ({
-  setError: vi.fn(),
+  setMessage: vi.fn(),
 }));
 
 describe('asyncCreateThread', () => {
@@ -132,7 +132,7 @@ describe('asyncCreateThread', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'failed message',
     });
@@ -276,7 +276,7 @@ describe('asyncGetThread', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'failed message',
     });
@@ -359,7 +359,7 @@ describe('asyncUpVoteThread', () => {
       },
     });
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });
@@ -442,7 +442,7 @@ describe('asyncDownVoteThread', () => {
       },
     });
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });
@@ -518,7 +518,7 @@ describe('asyncNeutralVoteThread', () => {
     });
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: fakeResponse.message,
     });

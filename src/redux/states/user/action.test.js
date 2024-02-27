@@ -10,11 +10,11 @@ import {showLoading, hideLoading} from 'react-redux-loading-bar';
 import {
   SET_PRELOAD,
   SET_USER,
-  UNSET_ERROR,
+  UNSET_MESSAGE,
   UNSET_PRELOAD,
   UNSET_USER,
 } from '../../actionTypes';
-import {setError} from '../error/action';
+import {setMessage} from '../error/action';
 
 /**
  * Testing scenario
@@ -37,7 +37,7 @@ import {setError} from '../error/action';
  */
 
 vi.mock('../error/action', () => ({
-  setError: vi.fn(),
+  setMessage: vi.fn(),
 }));
 
 describe('asyncLoginUser', () => {
@@ -98,7 +98,7 @@ describe('asyncLoginUser', () => {
       type: SET_USER,
       payload: fakeProfileResponse.data.user,
     });
-    expect(dispatch).toHaveBeenCalledWith({type: UNSET_ERROR});
+    expect(dispatch).toHaveBeenCalledWith({type: UNSET_MESSAGE});
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
 
@@ -119,7 +119,7 @@ describe('asyncLoginUser', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'failed message',
     });
@@ -163,8 +163,11 @@ describe('asyncRegisterUser', () => {
 
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
-    expect(dispatch).toHaveBeenCalledWith({type: UNSET_ERROR});
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
+    expect(dispatch).toHaveBeenCalledWith(setMessage({
+      type: 'success',
+      message: 'Register success, please login'
+    }));
   });
 
   it('should dispatch action correctly when data fetching failed', async () => {
@@ -184,7 +187,7 @@ describe('asyncRegisterUser', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'failed message',
     });
@@ -233,7 +236,7 @@ describe('asyncGetProfile', () => {
       type: SET_USER,
       payload: fakeResponse.data.user,
     });
-    expect(dispatch).toHaveBeenCalledWith({type: UNSET_ERROR});
+    expect(dispatch).toHaveBeenCalledWith({type: UNSET_MESSAGE});
     expect(dispatch).toHaveBeenCalledWith({type: UNSET_PRELOAD});
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
@@ -300,7 +303,7 @@ describe('logoutUser', () => {
     // Assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
-    expect(setError).toHaveBeenCalledWith({
+    expect(setMessage).toHaveBeenCalledWith({
       type: 'error',
       message: 'Logout failed',
     });
